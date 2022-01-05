@@ -15,7 +15,7 @@ def start_game():
     rules_response = input("Hi " + name + ". Would you like to see the game rules & backstory? Enter y/n \n").lower()
 
     if rules_response == 'y':
-        print("game_rules")
+        game_rules()
     elif rules_response == 'n':
         ready_to_play = input("Are you ready to play? y/n \n").lower()
         if ready_to_play == 'y':
@@ -28,5 +28,27 @@ def start_game():
             print("\U0001f4a9" * 22)
     else:
         print("You have made an incorrect selection. Please try again\n")
+
+def game_rules():
+    """
+    Displays game rules to user if rules_response is True.
+    Accepts user input and calls game function if user is
+    ready to play.
+    """
+    print("HERE ARE THE RULES")
+
+    ready_to_play = input("Are you ready to play? y/n \n").lower()
+
+#class Board:
+ #   def __init__(self, size, num_of_poos, player_name):
+  #      """
+   #     Creates an instance of board
+    #    """
+     #   self.size = size
+      #  self.num_of_poos = num_of_poos
+       # self.player_name = player_name
+
+#player_board = Board(8, 10, {name})
+
 
 start_game()
