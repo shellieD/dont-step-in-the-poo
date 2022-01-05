@@ -23,6 +23,11 @@ def start_game():
         game_rules()
     elif rules_response == 'n':
         ready_to_play = input("Are you ready to play? y/n \n").lower()
+
+        while ready_to_play not in ('y', 'n'):
+            print("You have made an incorrect selection. Please try again\n")
+            ready_to_play = input("Are you ready to play? y/n \n").lower()
+
         if ready_to_play == 'y':
                 print("open_game_board")
         if ready_to_play == 'n':
