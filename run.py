@@ -44,6 +44,25 @@ def game_rules():
 
     ready_to_play = input("Are you ready to play? y/n \n").lower()
 
+    while ready_to_play not in ('y', 'n'):
+            print("You have made an incorrect selection. Please try again\n")
+            ready_to_play = input("Are you ready to play? y/n \n").lower()
+
+    if ready_to_play == 'y':
+        open_game_board()
+    elif ready_to_play == 'n':
+        print("You said NO!  Goodbye for now.\n")
+        print("\U0001f4a9" * 22)
+        result = pyfiglet.figlet_format("GOODBYE")
+        print(result)
+        print("\U0001f4a9" * 22)
+
+def open_game_board():
+     """
+     Opens game board ready to play or something like that
+     """
+     print("HERE IS THE GAME BOARD")
+
 #class Board:
  #   def __init__(self, size, num_of_poos, player_name):
   #      """
