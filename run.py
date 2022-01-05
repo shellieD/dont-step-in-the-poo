@@ -22,6 +22,7 @@ def start_game():
     if rules_response == 'y':
         game_rules()
     elif rules_response == 'n':
+
         ready_to_play = input("Are you ready to play? y/n \n").lower()
 
         while ready_to_play not in ('y', 'n'):
