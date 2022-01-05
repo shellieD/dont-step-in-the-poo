@@ -12,13 +12,13 @@ def start_game():
     print("\U0001f4a9" * 26)
 
     name = input("Please enter your name: ")
-    rules_response = input("Hi " + name + ". Would you like to see"
+    rules_response = input("Hi " + name + ". Would you like to see "
                            "the game rules & backstory? Enter y/n \n").lower()
 
     while rules_response not in ('y', 'n'):
         print("You have made an incorrect selection. Please try again\n")
-        rules_response = input("Hi " + name + ". Would you like to see"
-                               "the game rules & backstory?"
+        rules_response = input("Hi " + name + ". Would you like to see "
+                               "the game rules & backstory? "
                                "Enter y/n \n").lower()
 
     if rules_response == 'y':
