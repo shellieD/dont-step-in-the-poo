@@ -14,6 +14,11 @@ def start_game():
     name = input("Please enter your name: ")
     rules_response = input("Hi " + name + ". Would you like to see the game rules & backstory? Enter y/n \n").lower()
 
+    while rules_response not in ('y', 'n'):
+        print("You have made an incorrect selection. Please try again\n")
+        rules_response = input("Hi " + name + ". Would you like to see the game rules & backstory? Enter y/n \n").lower()
+
+
     if rules_response == 'y':
         game_rules()
     elif rules_response == 'n':
