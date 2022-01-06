@@ -1,5 +1,19 @@
 import pyfiglet
 
+class Board():
+    def __init__(self, ):
+        """
+        Creates an instance of board
+        """
+
+    board = []
+    for i in range(0, 8):
+        board.append("\U0001f7e9 " * 6)
+    print(board)
+        
+    # print(self.guess_board)
+
+# player_board = Board(8, 10, {name})
 
 def start_game():
     """
@@ -70,18 +84,13 @@ def open_game_board():
     Opens game board ready to play or something like that
     """
     print("HERE IS THE GAME BOARD")
-
-#
-# class Board:
-#   def __init__(self, size, num_of_poos, player_name):
-#      """
-#     Creates an instance of board
-#    """
-#   self.size = size
-#  self.num_of_poos = num_of_poos
-# self.player_name = player_name
-
-# player_board = Board(8, 10, {name})
-
+    
+ #   board_size = 8
+  #  guess_board = []
+    #for row in range(board_size):
+   #     guess_board.append([])
+     #   for _ in range(self.board_size):
+      #      self.guess_board[row].append("U+1F7E9")
+   # return self.guess_board
 
 start_game()
