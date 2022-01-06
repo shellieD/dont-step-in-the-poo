@@ -69,16 +69,20 @@ def open_game_board():
     """
     Opens game board ready to play or something like that
     """
-    print("HERE IS THE GAME BOARD"
-          "Top left ")
+    print("\U0001f4a9" * 22)
+    print("GAME BOARD\n"
+          "Top left corner is row 0, col 0.\n"
+          "Bottom right corner is row 7, col 7.\n"
+          "Make a clear path horizontally or vertically\n"
+          "across the garden without stepping in dog poop! \U0001f4a9\n"
+          "Good luck!")
+    print("\U0001f4a9" * 22 + " \n")
 
     rows = (8)
     cols = (8)
-    arr = [["\U0001f7e9" for i in range(cols)] for j in range(rows)]
+    board = [["\U0001f7e9" for i in range(cols)] for j in range(rows)]
 
-    print("0 1 2 3 4 5 6 7\n"
-          "----------------")
-    for _ in arr:
+    for _ in board:
         print("".join(_))
 
 
