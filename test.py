@@ -18,4 +18,4 @@ coord = (row, column)
 if coord in poos:
     print("What a mess!!!")
 else:
-    print("OOooh that was a close one!")
+    print("OOooh that was a close one!") 
