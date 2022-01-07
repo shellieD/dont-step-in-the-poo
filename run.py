@@ -47,7 +47,33 @@ def game_rules():
     Accepts user input and calls game function if user is
     ready to play.
     """
-    print("HERE ARE THE RULES")
+    print("\U0001f4a9" * 22)
+    print(" \n")
+    story = pyfiglet.figlet_format("                STORY", font="digital")
+    print(story)
+    print(" \n"
+          "Hello Postie!  I see you have some very important \n"
+          "letters to deliver there! \U0001f4ec \n"
+          " \n"
+          "Unfortunately, some very naughty pooches \U0001f415 have also \n"
+          "made a few deliveries at this house. \U0001f4a9 \n"
+          " \n"
+          "Can you make it across the garden without stepping \n"
+          "in that stinky dog poop? \n"
+          " \n")
+    rules = pyfiglet.figlet_format("                RULES", font="digital")
+    print(rules)
+    print(" \n"
+          "Make a clear path path either horizontally or vertically \n"
+          "across the garden using the numbers on your keypad \n"
+          "to select the row and column you would like to try first. \n"
+          "If the tile you pick does not contain poo, the tile will be\n"
+          "replaced with footprint. \U0001f9b6 \n"
+          " \n"
+          "If you step in poo it will be replaced with.... well you know... \n"
+          "and you will need to try and make a new path! \n"
+          " \n")
+    print("\U0001f4a9" * 22)
 
     ready_to_play = input("Are you ready to play? y/n \n").lower()
 
