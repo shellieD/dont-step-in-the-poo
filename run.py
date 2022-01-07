@@ -111,8 +111,8 @@ def open_game_board():
     cols = (8)
     board = [["\U0001f7e9" for i in range(cols)] for j in range(rows)]
 
-    for _ in board:
-        print("".join(_))
+    for row in board:
+        print("".join(row))
 
 
 start_game()
