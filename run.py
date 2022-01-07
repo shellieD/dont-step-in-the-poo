@@ -96,7 +96,10 @@ def open_game_board():
     Opens game board ready to play or something like that
     """
     print("\U0001f4a9" * 22)
-    print("GAME BOARD\n"
+    print(" \n")
+    game_board = pyfiglet.figlet_format("          GAME-BOARD", font="digital")
+    print(game_board)
+    print(" \n"
           "Top left corner is row 0, col 0.\n"
           "Bottom right corner is row 7, col 7.\n"
           "Make a clear path horizontally or vertically\n"
