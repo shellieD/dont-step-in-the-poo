@@ -54,7 +54,7 @@ def game_rules():
     print(story)
     print(" \n"
           "Hello Postie!  I see you have some very important \n"
-          "letters to deliver there! \U0001f4ec \n"
+          "letters to deliver! \U0001f4ec \n"
           " \n"
           "Unfortunately, some very naughty pooches \U0001f415 have also \n"
           "made a few deliveries at this house. \U0001f4a9 \n"
@@ -65,9 +65,9 @@ def game_rules():
     rules = pyfiglet.figlet_format("                RULES", font="digital")
     print(rules)
     print(" \n"
-          "Make a clear path path either horizontally or vertically \n"
-          "across the garden using the numbers on your keypad \n"
-          "to select the row and column you would like to try first. \n"
+          "Make a  horizontal path across the garden using\n"
+          "the numbers on your keypad to select the row\n"
+          "and column you would like to try first. \n"
           "If the tile you pick does not contain poo, the tile will be\n"
           "replaced with footprint. \U0001f9b6 \n"
           " \n"
