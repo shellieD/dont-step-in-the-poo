@@ -1,4 +1,5 @@
 import pyfiglet
+from random import randrange
 
 
 def start_game():
