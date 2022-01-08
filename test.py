@@ -18,7 +18,6 @@ def set_up_game():
 
     while True:
         row = int(input("Choose a row \n"))
-        validate_input(row)
 
         if validate_input(row):
             print("data is valid")
@@ -26,21 +25,20 @@ def set_up_game():
 
     while True:
         column = int(input("Choose a column \n"))
-        validate_input(column)
 
         if validate_input(column):
             print("data is valid")
             break
 
-        coord = (row, column)
-        player_guess = []
+    coord = (row, column)
+    player_guess = []
 
-        if coord in poos:
-            print("What a mess!!!")
-        else:
-            print("Phew, no poo there!!")
-            player_guess.append(coord)
-            print(player_guess)
+    if coord in poos:
+        print("What a mess!!!")
+    else:
+        print("Phew, no poo there!!")
+        player_guess.append(coord)
+        print(player_guess)
 
 
 def validate_input(value):
@@ -53,8 +51,8 @@ def validate_input(value):
             raise ValueError(
                 f"Please choose a number between 0 and 7. You entered: {value}"
             )
-    except ValueError as e:
-        print(f"Invalid Data {e}. Please try again. ")
+    except ValueError as error:
+        print(f"Invalid Data: {error}. Please try again. ")
         return False
 
     return True
