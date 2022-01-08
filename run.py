@@ -1,5 +1,5 @@
-import pyfiglet
 from random import randrange
+import pyfiglet
 
 
 def start_game():
@@ -40,6 +40,7 @@ def start_game():
             result = pyfiglet.figlet_format("GOODBYE")
             print(result)
             print("\U0001f4a9" * 22)
+            exit()
 
 
 def game_rules():
@@ -90,6 +91,7 @@ def game_rules():
         result = pyfiglet.figlet_format("GOODBYE")
         print(result)
         print("\U0001f4a9" * 22)
+        exit()
 
 
 def open_game_board():
@@ -177,5 +179,3 @@ def validate_input(value):
 
 start_game()
 set_up_game()
-
-
