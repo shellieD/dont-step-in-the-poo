@@ -8,8 +8,8 @@ def start_game():
     would like to see view rules and story.
     """
     print("\U0001f4a9" * 26)
-    result = pyfiglet.figlet_format("DONT STEP\nIN THE\nPOOP")
-    print(result)
+    title = pyfiglet.figlet_format("DONT STEP\nIN THE\nPOOP")
+    print(title)
     print("\U0001f4a9" * 26)
 
     name = input("Please enter your name: ")
@@ -118,6 +118,16 @@ def open_game_board():
         print("".join(row))
 
 
+def validate_choice(user_choice):
+    while True:
+        choice = int(input(f"Choose a {user_choice} "))
+
+        if validate_input(choice):
+            print("it works")
+            break
+    return choice
+
+
 def set_up_game():
     """
     Selects a random row as a clear path through the board.
@@ -133,31 +143,26 @@ def set_up_game():
             poos.append((i, randrange(0, 8)))
     print(poos)
 
-    while True:
-        row = int(input("Choose a row \n"))
-        validate_input(row)
+    flat_poos = 0
+    player_guess = []
 
-        if validate_input(row):
-            print("data is valid")
-            break
+    while flat_poos < 7:
 
-    while True:
-        column = int(input("Choose a column \n"))
-        validate_input(column)
+        coord = (validate_choice("row \n"), validate_choice("column \n"))
 
-        if validate_input(column):
-            print("data is valid")
-            break
+        while coord in player_guess:
+            print("DUH... you've already guessed that!! Try again")
+            coord = (validate_choice("row \n"), validate_choice("column \n"))
 
-        coord = (row, column)
-        player_guess = []
+        player_guess.append(coord)
 
         if coord in poos:
             print("What a mess!!!")
+            flat_poos = flat_poos + 1
+            print(flat_poos)
         else:
             print("Phew, no poo there!!")
-            player_guess.append(coord)
-            print(player_guess)
+        print(player_guess)
 
 
 def validate_input(value):
@@ -166,12 +171,12 @@ def validate_input(value):
     the range 0-7
     """
     try:
-        if value not in range(0, 7):
+        if value not in range(8):
             raise ValueError(
                 f"Please choose a number between 0 and 7. You entered: {value}"
             )
-    except ValueError as e:
-        print(f"Invalid Data {e}. Please try again. ")
+    except ValueError as error:
+        print(f"Invalid Data {error}. Please try again. ")
         return False
 
     return True
