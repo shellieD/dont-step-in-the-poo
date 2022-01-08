@@ -69,7 +69,7 @@ def game_rules():
           "the numbers on your keypad to select the row\n"
           "and column you would like to try first. \n"
           "If the tile you pick does not contain poo, the tile will be\n"
-          "replaced with footprint. \U0001f9b6 \n"
+          "replaced with a shoe. \U0001f97e \n"
           " \n"
           "If you step in poo it will be replaced with.... well you know... \n"
           "and you will need to try and make a new path! \n"
@@ -103,7 +103,7 @@ def open_game_board():
     print(" \n"
           "Top left corner is row 0, col 0.\n"
           "Bottom right corner is row 7, col 7.\n"
-          "Make a clear path horizontally or vertically\n"
+          "Make a clear path from left to right \n"
           "across the garden without stepping in dog poop! \U0001f4a9\n"
           "Good luck!")
     print("\U0001f4a9" * 22 + " \n")
@@ -116,4 +116,66 @@ def open_game_board():
         print("".join(row))
 
 
+def set_up_game():
+    """
+    Selects a random row as a clear path through the board.
+    Distributes a poo randomly to each other row.
+    """
+
+    clear_path = randrange(0, 8)
+    print(clear_path)
+
+    poos = []
+    for i in range(8):
+        if i != clear_path:
+            poos.append((i, randrange(0, 8)))
+    print(poos)
+
+    while True:
+        row = int(input("Choose a row \n"))
+        validate_input(row)
+
+        if validate_input(row):
+            print("data is valid")
+            break
+
+    while True:
+        column = int(input("Choose a column \n"))
+        validate_input(column)
+
+        if validate_input(column):
+            print("data is valid")
+            break
+
+        coord = (row, column)
+        player_guess = []
+
+        if coord in poos:
+            print("What a mess!!!")
+        else:
+            print("Phew, no poo there!!")
+            player_guess.append(coord)
+            print(player_guess)
+
+
+def validate_input(value):
+    """
+    Checks that the value entered is within
+    the range 0-7
+    """
+    try:
+        if value not in range(0, 7):
+            raise ValueError(
+                f"Please choose a number between 0 and 7. You entered: {value}"
+            )
+    except ValueError as e:
+        print(f"Invalid Data {e}. Please try again. ")
+        return False
+
+    return True
+
+
 start_game()
+set_up_game()
+
+
