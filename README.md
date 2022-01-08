@@ -2,7 +2,7 @@
 
 ## Introduction
 
-## UX
+## UX 
 
 ### Strategy Plane
 
