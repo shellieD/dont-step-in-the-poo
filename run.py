@@ -136,7 +136,7 @@ def set_up_game():
     """
 
     clear_path = randrange(0, 8)
-    print(clear_path)
+    print(f"For testing purposes the clear path is row: {clear_path}")
     clear_path_coord = [(clear_path, x) for x in range(8)]
     # clear_path_coord stores coordinates for the clear path
 
@@ -144,7 +144,7 @@ def set_up_game():
     for i in range(8):
         if i != clear_path:
             poos.append((i, randrange(0, 8)))
-    print(poos)
+    print(f"For testing purposes poos are placed here {poos}")
 
     flat_poos = 0  # Stores coordinates of all identified poos
     player_guess = []  # Stores all player guesses
