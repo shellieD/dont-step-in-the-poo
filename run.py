@@ -117,7 +117,7 @@ def open_game_board():
     for row in board:
         print(" ".join(row))
 
-    return board 
+    return board
 
 
 def validate_choice(user_choice):
@@ -137,7 +137,8 @@ def set_up_game():
 
     clear_path = randrange(0, 8)
     print(clear_path)
-    clear_path_coord = [(clear_path, x) for x in range(8)] # stores coordinates for the clear path
+    clear_path_coord = [(clear_path, x) for x in range(8)]
+    # clear_path_coord stores coordinates for the clear path
 
     poos = []
     for i in range(8):
@@ -146,7 +147,7 @@ def set_up_game():
     print(poos)
 
     flat_poos = 0  # Stores coordinates of all identified poos
-    player_guess = [] #Stores all player guesses
+    player_guess = []  # Stores all player guesses
     correct_guess = []  # Stores all correct guesses on clear path
 
     while flat_poos < 7:
@@ -178,7 +179,9 @@ def set_up_game():
 
 def validate_input(value):
     """
-    Checks that the value entered is an int within the range of 8
+    Within the try statement, converts the row/column value entered
+    into an integer.  Returns an error if value entered is not a number
+    returns an error if the number is not within the range 0-8
     """
     try:
         value = int(value)
@@ -193,28 +196,7 @@ def validate_input(value):
     except ValueError as error:
         print(f"Invalid data: {error}, please try again.")
         return False
-
     return True
-
-# def validate_input(value):
-#     """
-#     Checks that the value entered is within
-#     the range of 8 and is not a letter
-#     """
-#     try:
-#         value = int(value)
-#             raise TypeError("Only integers are allowed \n")
-#         if value not in range(8):
-#             raise ValueError(
-#                 f"Please choose a number between 0 and 7."
-#                 f"You entered: {value}")
-#     except TypeError as error:
-#         print(f"Invalid Data {error}. Please try again. ")
-#     except ValueError as error:
-#         print(f"Invalid Data {error}. Please try again. ")
-#         return False
-
-#     return True
 
 
 start_game()
