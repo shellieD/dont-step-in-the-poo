@@ -7,10 +7,10 @@ def start_game():
     Opens the title screen, requests players name and asks if player
     would like to see view rules and story.
     """
-    print("\U0001f4a9" * 26)
+    print("\U0001f4a9 " * 26)
     title = pyfiglet.figlet_format("DONT STEP\nIN THE\nPOOP")
     print(title)
-    print("\U0001f4a9" * 26)
+    print("\U0001f4a9 " * 26)
 
     name = input("Please enter your name: ")
     rules_response = input("Hi " + name + ". Would you like to see "
@@ -19,7 +19,7 @@ def start_game():
     while rules_response not in ('y', 'n'):
         print("You have made an incorrect selection. Please try again\n")
         rules_response = input("Hi " + name + ". Would you like to see "
-                               "the game rules & backstory? "
+                               "the story & game rules? "
                                "Enter y/n \n").lower()
 
     if rules_response == 'y':
@@ -36,10 +36,10 @@ def start_game():
             open_game_board()
         if ready_to_play == 'n':
             print("You said NO!  Goodbye for now.\n")
-            print("\U0001f4a9" * 22)
+            print("\U0001f4a9 " * 22)
             result = pyfiglet.figlet_format("GOODBYE")
             print(result)
-            print("\U0001f4a9" * 22)
+            print("\U0001f4a9 " * 22)
             exit()
 
 
@@ -49,7 +49,7 @@ def game_rules():
     Accepts user input and calls game function if user is
     ready to play.
     """
-    print("\U0001f4a9" * 22)
+    print("\U0001f4a9 " * 22)
     print(" \n")
     story = pyfiglet.figlet_format("                STORY", font="digital")
     print(story)
@@ -75,7 +75,7 @@ def game_rules():
           "If you step in poo it will be replaced with.... well you know... \n"
           "and you will need to try and make a new path! \n"
           " \n")
-    print("\U0001f4a9" * 22)
+    print("\U0001f4a9 " * 22)
 
     ready_to_play = input("Are you ready to play? y/n \n").lower()
 
@@ -98,7 +98,7 @@ def open_game_board():
     """
     Opens game board ready to play or something like that
     """
-    print("\U0001f4a9" * 22)
+    print("\U0001f4a9 " * 22)
     print(" \n")
     game_board = pyfiglet.figlet_format("          GAME-BOARD", font="digital")
     print(game_board)
@@ -108,22 +108,23 @@ def open_game_board():
           "Make a clear path from left to right \n"
           "across the garden without stepping in dog poop! \U0001f4a9\n"
           "Good luck!")
-    print("\U0001f4a9" * 22 + " \n")
+    print("\U0001f4a9 " * 22 + " \n")
 
     rows = (8)
     cols = (8)
-    board = [["\U0001f7e9" for i in range(cols)] for j in range(rows)]
+    board = [["\U0001f7e9 " for i in range(cols)] for j in range(rows)]
 
     for row in board:
-        print("".join(row))
+        print(" ".join(row))
+
+    return board 
 
 
 def validate_choice(user_choice):
     while True:
-        choice = int(input(f"Choose a {user_choice} "))
+        choice = input(f"Choose a {user_choice} ")
 
         if validate_input(choice):
-            print("it works")
             break
     return choice
 
@@ -136,6 +137,7 @@ def set_up_game():
 
     clear_path = randrange(0, 8)
     print(clear_path)
+    clear_path_coord = [(clear_path, x) for x in range(8)] # stores coordinates for the clear path
 
     poos = []
     for i in range(8):
@@ -143,15 +145,16 @@ def set_up_game():
             poos.append((i, randrange(0, 8)))
     print(poos)
 
-    flat_poos = 0
-    player_guess = []
+    flat_poos = 0  # Stores coordinates of all identified poos
+    player_guess = [] #Stores all player guesses
+    correct_guess = []  # Stores all correct guesses on clear path
 
     while flat_poos < 7:
 
         coord = (validate_choice("row \n"), validate_choice("column \n"))
 
         while coord in player_guess:
-            print("DUH... you've already guessed that!! Try again")
+            print("Oh plop... you've already guessed that!! Try again")
             coord = (validate_choice("row \n"), validate_choice("column \n"))
 
         player_guess.append(coord)
@@ -159,27 +162,59 @@ def set_up_game():
         if coord in poos:
             print("What a mess!!!")
             flat_poos = flat_poos + 1
-            print(flat_poos)
+            print(f"You stood in poo at coordinate: {coord}")
+        elif coord in clear_path_coord:
+            correct_guess.append(coord)
+            print("Phew, no poo there!!")
+            print(f"Clear path at coordinate: {coord}")
         else:
             print("Phew, no poo there!!")
-        print(player_guess)
+            print(f"Clear path at coordinate: {coord}")
+
+        print(f"Player Guesses: {player_guess}")
+        print(f"Correct Guesses: {correct_guess}")
+        print(f"You stepped in {flat_poos} poos.")
 
 
 def validate_input(value):
     """
-    Checks that the value entered is within
-    the range 0-7
+    Checks that the value entered is an int within the range of 8
     """
     try:
+        value = int(value)
+    except ValueError:
+        print(f"Invalid data: {value} is not a number")
+        return False
+
+    try:
         if value not in range(8):
-            raise ValueError(
-                f"Please choose a number between 0 and 7. You entered: {value}"
-            )
+            raise ValueError(f"Please choose a number between 0 and 7."
+                             f"You entered: {value}")
     except ValueError as error:
-        print(f"Invalid Data {error}. Please try again. ")
+        print(f"Invalid data: {error}, please try again.")
         return False
 
     return True
+
+# def validate_input(value):
+#     """
+#     Checks that the value entered is within
+#     the range of 8 and is not a letter
+#     """
+#     try:
+#         value = int(value)
+#             raise TypeError("Only integers are allowed \n")
+#         if value not in range(8):
+#             raise ValueError(
+#                 f"Please choose a number between 0 and 7."
+#                 f"You entered: {value}")
+#     except TypeError as error:
+#         print(f"Invalid Data {error}. Please try again. ")
+#     except ValueError as error:
+#         print(f"Invalid Data {error}. Please try again. ")
+#         return False
+
+#     return True
 
 
 start_game()
