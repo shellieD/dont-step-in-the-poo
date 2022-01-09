@@ -2,32 +2,44 @@
 
 ## Introduction
 
+This project has been developed as part of the [Code Institute's](https://codeinstitute.net/) Diploma in Full-Stack Software Development.  The aim is to create a command line app that will demonstrate the skills I have learnt in python. 
+
+This command line app is a fun little game of chance.  The aim of the game is not disimiliar to Battleships - where you guess co-ordinates in a grid to sink your opponents shits - however, in this game you need to guess co-ordinates to make a clear path across the 'garden' without stepping in a dog poo. 
+
 ## UX 
 
 ### Strategy Plane
 
-* Site Goals
-* User Goals
+#### Site Goal
+
+* To provide the user with a fun and simple game of chance. 
+
+### User Stories
+
+* As a user I want to play a fun and simple game of chance. 
+* As a user I want the purpose and the rules of the game to be apparent.
 
 ### Scope Plane
 
 #### Features Planned
 
-### Structure Plane
+* 
+
+### Structure Plane
 
 * User Story: / Acceptance Criteria:
 
-### Skeleton Plane
+### Skeleton Plane
 
 #### Wireframes?
 
-#### Logic Flow
+#### Logic Flow
 
-### Surface Plane
+### Surface Plane
 
 #### Design
 
-#### Features 
+#### Features 
 
 * Welcome Screen
 * Story and Rules
@@ -36,13 +48,13 @@
 * Option to Play
 * Data Validation
 
-### Future Development
+### Future Development
 
 ### Testing
 
 ### Libraries Used
 
-### Deployment
+### Deployment
 
 This app has been deployed via ![Heroku](https://www.heroku.com/) and the live link can be found here: PUT LINK HERE!!! 
 
