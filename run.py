@@ -153,24 +153,26 @@ def set_up_game():
     while flat_poos < 7:
 
         coord = (validate_choice("row \n"), validate_choice("column \n"))
+        coord_tuple = tuple(int(el) for el in coord)
 
-        while coord in player_guess:
+        while coord_tuple in player_guess:
             print("Oh plop... you've already guessed that!! Try again")
             coord = (validate_choice("row \n"), validate_choice("column \n"))
+            coord_tuple = tuple(int(el) for el in coord)
 
-        player_guess.append(coord)
+        player_guess.append(coord_tuple)
 
-        if coord in poos:
+        if coord_tuple in poos:
             print("What a mess!!!")
             flat_poos = flat_poos + 1
-            print(f"You stood in poo at coordinate: {coord}")
-        elif coord in clear_path_coord:
-            correct_guess.append(coord)
+            print(f"You stood in poo at coordinate: {coord_tuple}")
+        elif coord_tuple in clear_path_coord:
+            correct_guess.append(coord_tuple)
             print("Phew, no poo there!!")
-            print(f"Clear path at coordinate: {coord}")
+            print(f"Clear path at coordinate: {coord_tuple}")
         else:
             print("Phew, no poo there!!")
-            print(f"Clear path at coordinate: {coord}")
+            print(f"Clear path at coordinate: {coord_tuple}")
 
         print(f"Player Guesses: {player_guess}")
         print(f"Correct Guesses: {correct_guess}")
