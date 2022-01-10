@@ -34,7 +34,8 @@ def start_game():
             ready_to_play = input("Are you ready to play? y/n \n").lower()
 
         if ready_to_play == 'y':
-            open_game_board()
+            # open_game_board()
+            set_up_game()
         if ready_to_play == 'n':
             print("You said NO!  Goodbye for now.\n")
             print("\U0001f4a9 " * 22)
@@ -92,13 +93,14 @@ def game_rules():
         ready_to_play = input("Are you ready to play? y/n \n").lower()
 
     if ready_to_play == 'y':
-        open_game_board()
+        # open_game_board()
+        set_up_game()
     elif ready_to_play == 'n':
         print("You said NO!  Goodbye for now.\n")
-        print("\U0001f4a9" * 22)
+        print("\U0001f4a9 " * 22)
         result = pyfiglet.figlet_format("GOODBYE")
         print(result)
-        print("\U0001f4a9" * 22)
+        print("\U0001f4a9 " * 22)
         exit()
 
 
@@ -142,7 +144,7 @@ def set_up_game():
     Selects a random row as a clear path through the board.
     Distributes a poo randomly to each other row.
     """
-
+    open_game_board()
     clear_path = randrange(0, 8)
     print(f"For testing purposes the clear path is row: {clear_path}")
     clear_path_coord = [(clear_path, x) for x in range(8)]
@@ -185,6 +187,46 @@ def set_up_game():
         print(f"Player Guesses: {player_guess}")
         print(f"Correct Guesses: {correct_guess}")
         print(f"You stepped in {flat_poos} poos.")
+    
+    you_lose()
+
+
+def you_lose():
+    print("\U0001f4a9 " * 22)
+    print("\n")
+    result = pyfiglet.figlet_format("* OH POOP * \n YOU LOOSE!")
+    print(result)
+
+    print("                  #")
+    print("                 /##\ ")
+    print("                /######\ ")
+    print("                /######")
+    print("              /###########\ ")
+    print("               /#########\ ")
+    print("            /#### ####### ##\ ")
+    print("             /##__######__#\ ")
+    print("          /###################\ ")
+    print("           /#####\_____/#####\ ")
+    print("          /##############\####\ ")
+    print("         ###/###################")
+    print(" \n")
+    print("\U0001f4a9 " * 22)
+    print(" \n")
+
+    play_again = input("Would you like to play again? y/n \n")
+    while play_again not in ('y', 'n'):
+        print("You have made an incorrect selection. Please try again\n")
+        play_again = input("Would you like to play again? y/n \n").lower()
+    
+    if play_again == 'y':
+        set_up_game()
+    elif play_again == 'n':
+        print("You said NO!  Goodbye for now.\n")
+        print("\U0001f4a9" * 22)
+        result = pyfiglet.figlet_format("GOODBYE")
+        print(result)
+        print("\U0001f4a9" * 22)
+        exit()
 
 
 def validate_input(value):
