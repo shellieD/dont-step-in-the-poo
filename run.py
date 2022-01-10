@@ -13,6 +13,7 @@ def start_game():
     print("\U0001f4a9 " * 26)
 
     name = input("Please enter your name: ")
+    print(" \n")
     rules_response = input("Hi " + name + ". Would you like to see "
                            "the game rules & backstory? Enter y/n \n").lower()
 
@@ -63,10 +64,16 @@ def game_rules():
           "Can you make it across the garden without stepping \n"
           "in that stinky dog poop? \n"
           " \n")
+    print("\U0001f4a9 " * 22)
+    print(" \n")
+    input("Press enter to continue \n")
+    print(" \n")
+    print("\U0001f4a9 " * 22)
     rules = pyfiglet.figlet_format("                RULES", font="digital")
+    print(" \n")
     print(rules)
     print(" \n"
-          "Make a  horizontal path across the garden using\n"
+          "Make a horizontal path across the garden using\n"
           "the numbers on your keypad to select the row\n"
           "and column you would like to try first. \n"
           "If the tile you pick does not contain poo, the tile will be\n"
@@ -76,6 +83,7 @@ def game_rules():
           "and you will need to try and make a new path! \n"
           " \n")
     print("\U0001f4a9 " * 22)
+    print(" \n")
 
     ready_to_play = input("Are you ready to play? y/n \n").lower()
 
