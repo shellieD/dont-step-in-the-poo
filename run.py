@@ -80,7 +80,7 @@ def game_rules():
           "Hello Postie!  I see you have some very important \n"
           "letters to deliver! \U0001f4ec \n"
           " \n"
-          "Unfortunately, some very naughty pooches \U0001f415 have also \n"
+          "Unfortunately, some very naughty pooches \U0001f415  have also \n"
           "made a few deliveries at this house. \U0001f4a9 \n"
           " \n"
           "Can you make it across the garden without stepping \n"
