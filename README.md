@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project has been developed as part of the [Code Institute's](https://codeinstitute.net/) Diploma in Full-Stack Software Development.  The aim is to create a command line app that will demonstrate the skills I have learnt in python. 
+This project has been developed as part of the [Code Institute's](https://codeinstitute.net/) Diploma in Full-Stack Software Development.  The aim is to create a command line app that will demonstrate the skills I have learnt in Python. 
 
 This command line app is a fun little game of chance.  The aim of the game is not disimiliar to Battleships - where you guess co-ordinates in a grid to sink your opponents shits - however, in this game you need to guess co-ordinates to make a clear path across the 'garden' without stepping in a dog poo. 
 
@@ -39,6 +39,10 @@ This command line app is a fun little game of chance.  The aim of the game is no
 
 #### Design
 
+Poop Ascii Art from user ![pr0p3rno0b10](https://replit.com/@pr0p3rno0b10/poop-emoji-ascii-art) on Replit.
+
+Smiley face ASCII are from ![loveascii.com](http://loveascii.com/smilies.html)
+
 #### Features 
 
 * Welcome Screen
@@ -47,6 +51,7 @@ This command line app is a fun little game of chance.  The aim of the game is no
 * Personalise with player name
 * Option to Play
 * Data Validation
+* Ascii art for user experience
 
 ### Future Development
 
