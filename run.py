@@ -190,6 +190,7 @@ def set_up_game():
     while flat_poos < 5:
 
         open_game_board()
+
         print(f"Player Guesses: {player_guess}")
         print(f"For testing purposes the clear path is row: {clear_path}")
         print(f"For testing purposes poos are placed here {poos}")
@@ -219,7 +220,6 @@ def set_up_game():
             print("Phew, no poo there!!")
             print(f"Clear path at coordinate: {coord_tuple}")
 
-        
         print(f"Correct Guesses: {correct_guess}")
         print(f"You stepped in {flat_poos} poos.")
         sleep(5)
