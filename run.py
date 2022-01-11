@@ -214,7 +214,7 @@ def set_up_game():
 
         print(f"Correct Guesses: {correct_guess}")
         print(f"You stepped in {flat_poos} poos.")
-        sleep(5)
+        sleep(2)
         clear()
 
     you_lose()
