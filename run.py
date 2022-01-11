@@ -58,11 +58,7 @@ def start_game():
         if ready_to_play == 'y':
             set_up_game()
         if ready_to_play == 'n':
-            print("\U0001f4a9 " * 22)
-            result = pyfiglet.figlet_format("GOODBYE")
-            print(result)
-            print("\U0001f4a9 " * 22)
-            exit()
+            goodbye()
 
 
 def game_rules():
@@ -119,12 +115,7 @@ def game_rules():
         clear()
         set_up_game()
     elif ready_to_play == 'n':
-        clear()
-        print("\U0001f4a9 " * 22)
-        result = pyfiglet.figlet_format("GOODBYE")
-        print(result)
-        print("\U0001f4a9 " * 22)
-        exit()
+        goodbye()
 
 
 def open_game_board():
@@ -139,8 +130,9 @@ def open_game_board():
     print(" \n"
           "Top left corner is row 0, col 0.\n"
           "Bottom right corner is row 7, col 7.\n"
-          "Make a clear path from left to right \n"
+          "Make a clear path from left to right "
           "across the garden without stepping in dog poop! \U0001f4a9\n"
+          "Step in 5 poos and it's game-over"
           "Good luck!")
     print("\U0001f4a9 " * 22 + " \n")
 
@@ -263,11 +255,7 @@ def you_lose():
     if play_again == 'y':
         set_up_game()
     elif play_again == 'n':
-        print("\U0001f4a9" * 22)
-        result = pyfiglet.figlet_format("GOODBYE")
-        print(result)
-        print("\U0001f4a9" * 22)
-        exit()
+        goodbye()
 
 
 def you_win():
@@ -309,12 +297,18 @@ def you_win():
     if play_again == 'y':
         set_up_game()
     elif play_again == 'n':
-        print("\U0001f4a9" * 22)
-        result = pyfiglet.figlet_format("GOODBYE")
-        print(result)
-        print("\U0001f4a9" * 22)
-        exit()
+        goodbye()
+    
 
+def goodbye():
+    clear()
+    print("\U0001f4a9" * 27)
+    print(" \n")
+    result = pyfiglet.figlet_format("THANKS FOR PLAYING \n GOODBYE")
+    print(result)
+    print("\U0001f4a9" * 27)
+    print (" \n")
+    exit()
 
 def validate_input(value):
     """
