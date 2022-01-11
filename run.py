@@ -1,5 +1,26 @@
+
+""" Play a simple game of chance """
+# import only system from os
+from os import system, name
+
+# import sleep to show output for some time period
+from time import sleep
 from random import randrange
 import pyfiglet
+
+
+# define  clear function
+def clear():
+    """
+    Function to clear terminal when required.
+    """
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
 
 def start_game():
@@ -13,9 +34,9 @@ def start_game():
     print(title)
     print("\U0001f4a9 " * 26)
 
-    name = input("Please enter your name: ")
+    player_name = input("Please enter your name: ")
     print(" \n")
-    rules_response = input("Hi " + name + ". Would you like to see "
+    rules_response = input("Hi " + player_name + ". Would you like to see "
                            "the game rules & backstory? Enter y/n \n").lower()
 
     while rules_response not in ('y', 'n'):
@@ -50,9 +71,10 @@ def game_rules():
     Accepts user input and calls game function if user is
     ready to play.
     """
+    clear()
     print("\U0001f4a9 " * 22)
     print(" \n")
-    story = pyfiglet.figlet_format("                STORY", font="digital")
+    story = pyfiglet.figlet_format("                STORY")
     print(story)
     print(" \n"
           "Hello Postie!  I see you have some very important \n"
@@ -67,9 +89,11 @@ def game_rules():
     print("\U0001f4a9 " * 22)
     print(" \n")
     input("Press enter to continue \n")
-    print(" \n")
+
+    clear()
+
     print("\U0001f4a9 " * 22)
-    rules = pyfiglet.figlet_format("                RULES", font="digital")
+    rules = pyfiglet.figlet_format("                RULES")
     print(" \n")
     print(rules)
     print(" \n"
@@ -92,9 +116,10 @@ def game_rules():
         ready_to_play = input("Are you ready to play? y/n \n").lower()
 
     if ready_to_play == 'y':
-        # open_game_board()
+        clear()
         set_up_game()
     elif ready_to_play == 'n':
+        clear()
         print("\U0001f4a9 " * 22)
         result = pyfiglet.figlet_format("GOODBYE")
         print(result)
@@ -106,6 +131,7 @@ def open_game_board():
     """
     Opens game board ready to play or something like that
     """
+
     print("\U0001f4a9 " * 22)
     print(" \n")
     game_board = pyfiglet.figlet_format("          GAME-BOARD", font="digital")
@@ -148,24 +174,23 @@ def set_up_game():
     Selects a random row as a clear path through the board.
     Distributes a poo randomly to each other row.
     """
-    open_game_board()
+    clear()
     clear_path = randrange(0, 8)
-    print(f"For testing purposes the clear path is row: {clear_path}")
     clear_path_coord = [(clear_path, x) for x in range(8)]
-    # clear_path_coord stores coordinates for the clear path
 
     poos = []
     for i in range(8):
         if i != clear_path:
             poos.append((i, randrange(0, 8)))
-    print(f"For testing purposes poos are placed here {poos}")
 
     flat_poos = 0  # Stores coordinates of all identified poos
     player_guess = []  # Stores all player guesses
     correct_guess = []  # Stores all correct guesses on clear path
 
     while flat_poos < 7:
-
+        print(f"For testing purposes the clear path is row: {clear_path}")
+        print(f"For testing purposes poos are placed here {poos}")
+        open_game_board()
         coord = (validate_choice("row \n"), validate_choice("column \n"))
         coord_tuple = tuple(int(el) for el in coord)
 
@@ -194,6 +219,8 @@ def set_up_game():
         print(f"Player Guesses: {player_guess}")
         print(f"Correct Guesses: {correct_guess}")
         print(f"You stepped in {flat_poos} poos.")
+        sleep(5)
+        clear()
 
     you_lose()
 
@@ -203,7 +230,7 @@ def you_lose():
     Prints loose message to screen with ASCII art.
     Asks if player would like to play again
     """
-
+    clear()
     print("\U0001f4a9 " * 22)
     print("\n")
     result = pyfiglet.figlet_format("* OH POOP * \n YOU LOOSE!")
@@ -245,6 +272,7 @@ def you_win():
     Prints win message to screen with ASCII art.
     Asks if player would like to play again
     """
+    clear()
     print("\U0001f4a9 " * 22)
     print("\n")
     result = pyfiglet.figlet_format("  * YAY * \n * YOU WIN! *")
