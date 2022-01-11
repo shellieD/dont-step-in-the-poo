@@ -134,7 +134,7 @@ def open_game_board():
 
     print("\U0001f4a9 " * 22)
     print(" \n")
-    game_board = pyfiglet.figlet_format("          GAME-BOARD", font="digital")
+    game_board = pyfiglet.figlet_format("          GAME-BOARD")
     print(game_board)
     print(" \n"
           "Top left corner is row 0, col 0.\n"
