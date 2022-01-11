@@ -187,10 +187,13 @@ def set_up_game():
     player_guess = []  # Stores all player guesses
     correct_guess = []  # Stores all correct guesses on clear path
 
-    while flat_poos < 7:
+    while flat_poos < 5:
+
+        open_game_board()
+        print(f"Player Guesses: {player_guess}")
         print(f"For testing purposes the clear path is row: {clear_path}")
         print(f"For testing purposes poos are placed here {poos}")
-        open_game_board()
+
         coord = (validate_choice("row \n"), validate_choice("column \n"))
         coord_tuple = tuple(int(el) for el in coord)
 
@@ -216,7 +219,7 @@ def set_up_game():
             print("Phew, no poo there!!")
             print(f"Clear path at coordinate: {coord_tuple}")
 
-        print(f"Player Guesses: {player_guess}")
+        
         print(f"Correct Guesses: {correct_guess}")
         print(f"You stepped in {flat_poos} poos.")
         sleep(5)
