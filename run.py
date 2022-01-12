@@ -1,9 +1,11 @@
 
 """ Play a simple game of chance """
-
+# import only system from os
 from os import system, name
+
+# import sleep to show output for some time period
 from time import sleep
-from random import randrange
+# from random import randrange
 import pyfiglet
 
 
@@ -28,9 +30,7 @@ def start_game():
     * Asks if player would like to see view rules and story.
     """
     print("\U0001f4a9 " * 26)
-    title = pyfiglet.figlet_format("            DONT STEP\n"
-                                   "               IN THE\n"
-                                   "                 POOP")
+    title = pyfiglet.figlet_format("DONT STEP\nIN THE\nPOOP")
     print(title)
     print("\U0001f4a9 " * 26)
 
@@ -123,7 +123,7 @@ def open_game_board():
     Opens game board ready to play or something like that
     """
 
-    print("\U0001f4a9 " * 28)
+    print("\U0001f4a9 " * 22)
     print(" \n")
     game_board = pyfiglet.figlet_format("          GAME-BOARD")
     print(game_board)
@@ -134,7 +134,7 @@ def open_game_board():
           "across the garden without stepping in dog poop! \U0001f4a9\n"
           "Step in 5 poos and it's game-over"
           "Good luck!")
-    print("\U0001f4a9 " * 28 + " \n")
+    print("\U0001f4a9 " * 22 + " \n")
 
     rows = (8)
     cols = (8)
@@ -214,10 +214,11 @@ def set_up_game():
 
         print(f"Correct Guesses: {correct_guess}")
         print(f"You stepped in {flat_poos} poos.")
-        sleep(2)
+        sleep(3)
         clear()
 
     you_lose()
+
 
 def you_lose():
     """
@@ -230,18 +231,18 @@ def you_lose():
     result = pyfiglet.figlet_format("* OH POOP * \n YOU LOOSE!")
     print(result)
 
-    print("                        #")
-    print("                        {##} ")
-    print("                      {######} ")
-    print("                      {######}")
-    print("                    {###########} ")
-    print("                     {#########} ")
-    print("                  {#### ####### ##} ")
-    print("                   {##__######__#} ")
-    print("                {###################} ")
-    print("                 {#####{______}#####} ")
-    print("                {###################} ")
-    print("               {######################}")
+    print("                  #")
+    print("                 {##} ")
+    print("                {######} ")
+    print("                {######}")
+    print("              {###########} ")
+    print("               {#########} ")
+    print("            {#### ####### ##} ")
+    print("             {##__######__#} ")
+    print("          {###################} ")
+    print("           {#####{______}#####} ")
+    print("          {###################} ")
+    print("         {######################}")
     print(" \n")
     print("\U0001f4a9 " * 22)
     print(" \n")
@@ -270,21 +271,21 @@ def you_win():
     print("\U0001f4a9 " * 22)
     print(" \n")
 
-    print("                    OOOOOOOOOOO")
-    print("                OOOOOOOOOOOOOOOOOOO")
-    print("             OOOOOO  OOOOOOOOO  OOOOOO")
-    print("           OOOOOO      OOOOO      OOOOOO")
-    print("         OOOOOOOO  #   OOOOO  #   OOOOOOOO")
-    print("        OOOOOOOOOO    OOOOOOO    OOOOOOOOOO")
-    print("       OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    print("       OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    print("       OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO")
-    print("        OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO")
-    print("         OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO")
-    print("           OOOOO   OOOOOOOOOOOOOOO   OOOO")
-    print("            OOOOOO    OOOOOOOOO   OOOOOO")
-    print("               OOOOOO           0OOOOO")
-    print("                   000OOOOOOOOOOOO")
+    print("             OOOOOOOOOOO")
+    print("         OOOOOOOOOOOOOOOOOOO")
+    print("      OOOOOO  OOOOOOOOO  OOOOOO")
+    print("    OOOOOO      OOOOO      OOOOOO")
+    print("  OOOOOOOO  #   OOOOO  #   OOOOOOOO")
+    print(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO")
+    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+    print("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO")
+    print(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO")
+    print("  OOOO   OOOOOOOOOOOOOOOOOOO   OOOO")
+    print("    OOOO   0OOOOOOOOOOOOOO   0OOO")
+    print("     OOOOO    OOOOOOOOO    OOOOO")
+    print("        OOOO             OOOO")
+    print("           000000OOOOOOOOO")
     print(" \n")
     print("\U0001f4a9 " * 22)
 
@@ -297,17 +298,19 @@ def you_win():
         set_up_game()
     elif play_again == 'n':
         goodbye()
-    
+
 
 def goodbye():
+    """
+    Prints goodbye message and exits game.
+    """
     clear()
-    print("\U0001f4a9" * 27)
-    print(" \n")
-    result = pyfiglet.figlet_format("THANKS FOR PLAYING \n GOODBYE")
-    print(result)
-    print("\U0001f4a9" * 27)
-    print (" \n")
+    print("\U0001f4a9" * 22)
+    good_bye = pyfiglet.figlet_format("GOODBYE")
+    print(good_bye)
+    print("\U0001f4a9" * 22)
     exit()
+
 
 def validate_input(value):
     """
