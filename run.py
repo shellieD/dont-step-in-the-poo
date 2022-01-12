@@ -1,9 +1,7 @@
 
 """ Play a simple game of chance """
-# import only system from os
-from os import system, name
 
-# import sleep to show output for some time period
+from os import system, name
 from time import sleep
 from random import randrange
 import pyfiglet
@@ -30,7 +28,9 @@ def start_game():
     * Asks if player would like to see view rules and story.
     """
     print("\U0001f4a9 " * 26)
-    title = pyfiglet.figlet_format("DONT STEP\nIN THE\nPOOP")
+    title = pyfiglet.figlet_format("            DONT STEP\n"
+                                   "               IN THE\n"
+                                   "                 POOP")
     print(title)
     print("\U0001f4a9 " * 26)
 
@@ -123,7 +123,7 @@ def open_game_board():
     Opens game board ready to play or something like that
     """
 
-    print("\U0001f4a9 " * 22)
+    print("\U0001f4a9 " * 28)
     print(" \n")
     game_board = pyfiglet.figlet_format("          GAME-BOARD")
     print(game_board)
@@ -134,7 +134,7 @@ def open_game_board():
           "across the garden without stepping in dog poop! \U0001f4a9\n"
           "Step in 5 poos and it's game-over"
           "Good luck!")
-    print("\U0001f4a9 " * 22 + " \n")
+    print("\U0001f4a9 " * 28 + " \n")
 
     rows = (8)
     cols = (8)
@@ -166,14 +166,14 @@ def set_up_game():
     Selects a random row as a clear path through the board.
     Distributes a poo randomly to each other row.
     """
-    clear()
-    clear_path = randrange(0, 8)
-    clear_path_coord = [(clear_path, x) for x in range(8)]
+    # clear()
+    # clear_path = randrange(0, 8)
+    # clear_path_coord = [(clear_path, x) for x in range(8)]
 
-    poos = []
-    for i in range(8):
-        if i != clear_path:
-            poos.append((i, randrange(0, 8)))
+    # poos = []
+    # for i in range(8):
+    #     if i != clear_path:
+    #         poos.append((i, randrange(0, 8)))
 
     flat_poos = 0  # Stores coordinates of all identified poos
     player_guess = []  # Stores all player guesses
@@ -219,7 +219,6 @@ def set_up_game():
 
     you_lose()
 
-
 def you_lose():
     """
     Prints loose message to screen with ASCII art.
@@ -231,18 +230,18 @@ def you_lose():
     result = pyfiglet.figlet_format("* OH POOP * \n YOU LOOSE!")
     print(result)
 
-    print("                  #")
-    print("                 {##} ")
-    print("                {######} ")
-    print("                {######}")
-    print("              {###########} ")
-    print("               {#########} ")
-    print("            {#### ####### ##} ")
-    print("             {##__######__#} ")
-    print("          {###################} ")
-    print("           {#####{______}#####} ")
-    print("          {###################} ")
-    print("         {######################}")
+    print("                        #")
+    print("                        {##} ")
+    print("                      {######} ")
+    print("                      {######}")
+    print("                    {###########} ")
+    print("                     {#########} ")
+    print("                  {#### ####### ##} ")
+    print("                   {##__######__#} ")
+    print("                {###################} ")
+    print("                 {#####{______}#####} ")
+    print("                {###################} ")
+    print("               {######################}")
     print(" \n")
     print("\U0001f4a9 " * 22)
     print(" \n")
@@ -271,21 +270,21 @@ def you_win():
     print("\U0001f4a9 " * 22)
     print(" \n")
 
-    print("             OOOOOOOOOOO")
-    print("         OOOOOOOOOOOOOOOOOOO")
-    print("      OOOOOO  OOOOOOOOO  OOOOOO")
-    print("    OOOOOO      OOOOO      OOOOOO")
-    print("  OOOOOOOO  #   OOOOO  #   OOOOOOOO")
-    print(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO")
-    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    print("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO")
-    print(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO")
-    print("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO")
-    print("    OOOOO   OOOOOOOOOOOOOOO   OOOO")
-    print("     OOOOOO   OOOOOOOOO   OOOOOO")
-    print("        OOOOOO         OOOOOO")
-    print("            OOOOOOOOOOOO")
+    print("                    OOOOOOOOOOO")
+    print("                OOOOOOOOOOOOOOOOOOO")
+    print("             OOOOOO  OOOOOOOOO  OOOOOO")
+    print("           OOOOOO      OOOOO      OOOOOO")
+    print("         OOOOOOOO  #   OOOOO  #   OOOOOOOO")
+    print("        OOOOOOOOOO    OOOOOOO    OOOOOOOOOO")
+    print("       OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+    print("       OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+    print("       OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO")
+    print("        OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO")
+    print("         OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO")
+    print("           OOOOO   OOOOOOOOOOOOOOO   OOOO")
+    print("            OOOOOO    OOOOOOOOO   OOOOOO")
+    print("               OOOOOO           0OOOOO")
+    print("                   000OOOOOOOOOOOO")
     print(" \n")
     print("\U0001f4a9 " * 22)
 
