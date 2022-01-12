@@ -5,11 +5,11 @@ from os import system, name
 
 # import sleep to show output for some time period
 from time import sleep
-# from random import randrange
+
 import pyfiglet
+import gameboard
 
 
-# define  clear function
 def clear():
     """
     Function to clear terminal when required.
@@ -36,12 +36,14 @@ def start_game():
 
     player_name = input("Please enter your name: ")
     print(" \n")
-    rules_response = input("Hi " + player_name + ". Would you like to see "
-                           "the game rules & backstory? Enter y/n \n").lower()
+
+    rules_response = input(f"Hi {player_name}. "
+                           "Would you like to see the game rules & backstory? "
+                           "Enter y/n \n").lower()
 
     while rules_response not in ('y', 'n'):
         print("You have made an incorrect selection. Please try again\n")
-        rules_response = input("Hi " + name + ". Would you like to see "
+        rules_response = input(f"Hi {player_name}. Would you like to see "
                                "the story & game rules? "
                                "Enter y/n \n").lower()
 
@@ -118,34 +120,6 @@ def game_rules():
         goodbye()
 
 
-def open_game_board():
-    """
-    Opens game board ready to play or something like that
-    """
-
-    print("\U0001f4a9 " * 22)
-    print(" \n")
-    game_board = pyfiglet.figlet_format("          GAME-BOARD")
-    print(game_board)
-    print(" \n"
-          "Top left corner is row 0, col 0.\n"
-          "Bottom right corner is row 7, col 7.\n"
-          "Make a clear path from left to right "
-          "across the garden without stepping in dog poop! \U0001f4a9\n"
-          "Step in 5 poos and it's game-over"
-          "Good luck!")
-    print("\U0001f4a9 " * 22 + " \n")
-
-    rows = (8)
-    cols = (8)
-    board = [["\U0001f7e9 " for i in range(cols)] for j in range(rows)]
-
-    for row in board:
-        print(" ".join(row))
-
-    return board
-
-
 def validate_choice(user_choice):
     """
     Displays 'row' or 'column' string and gets user
@@ -166,14 +140,8 @@ def set_up_game():
     Selects a random row as a clear path through the board.
     Distributes a poo randomly to each other row.
     """
-    # clear()
-    # clear_path = randrange(0, 8)
-    # clear_path_coord = [(clear_path, x) for x in range(8)]
-
-    # poos = []
-    # for i in range(8):
-    #     if i != clear_path:
-    #         poos.append((i, randrange(0, 8)))
+    clear()
+    new_board = gameboard.Board()
 
     flat_poos = 0  # Stores coordinates of all identified poos
     player_guess = []  # Stores all player guesses
@@ -181,11 +149,11 @@ def set_up_game():
 
     while flat_poos < 5:
 
-        open_game_board()
+        new_board.draw_board()
 
         print(f"Player Guesses: {player_guess}")
-        print(f"For testing purposes the clear path is row: {clear_path}")
-        print(f"For testing purposes poos are placed here {poos}")
+        print(f"For testing purposes the clear path is row: {new_board.clear_path}")
+        print(f"For testing purposes poos are placed here {new_board.poos}")
 
         coord = (validate_choice("row \n"), validate_choice("column \n"))
         coord_tuple = tuple(int(el) for el in coord)
@@ -197,11 +165,11 @@ def set_up_game():
 
         player_guess.append(coord_tuple)
 
-        if coord_tuple in poos:
+        if coord_tuple in new_board.poos:
             print("What a mess!!!")
             flat_poos = flat_poos + 1
             print(f"You stood in poo at coordinate: {coord_tuple}")
-        elif coord_tuple in clear_path_coord:
+        elif coord_tuple in new_board.clear_path_coord:
             correct_guess.append(coord_tuple)
             print("Phew, no poo there!!")
             print(f"Clear path at coordinate: {coord_tuple}")
@@ -214,6 +182,9 @@ def set_up_game():
 
         print(f"Correct Guesses: {correct_guess}")
         print(f"You stepped in {flat_poos} poos.")
+
+        new_board.update_board(coord_tuple)
+
         sleep(3)
         clear()
 
