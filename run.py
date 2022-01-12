@@ -151,9 +151,9 @@ def set_up_game():
 
         new_board.draw_board()
 
-        print(f"Player Guesses: {player_guess}")
-        print(f"For testing purposes the clear path is row: {new_board.clear_path}")
-        print(f"For testing purposes poos are placed here {new_board.poos}")
+        print(f"You have guessed: {player_guess}")
+        # print(f"For testing purposes the clear path is row: {new_board.clear_path}")
+        # print(f"For testing purposes poos are placed here {new_board.poos}")
 
         coord = (validate_choice("row \n"), validate_choice("column \n"))
         coord_tuple = tuple(int(el) for el in coord)
