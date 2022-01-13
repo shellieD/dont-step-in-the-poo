@@ -52,8 +52,8 @@ class Board():
         Opens game board ready to play or something like that
         """
         print("\U0001f4a9 " * 22)
-        game_board = pyfiglet.figlet_format("          GAME-BOARD", font="bubble")
-        print(game_board)
+        # game_board = pyfiglet.figlet_format("          GAME-BOARD", font="bubble")
+        print(" " * 10 + "G A M E  B O A R D")
         print(
             " \n"
             "Top left corner is row 0, col 0.\n"
