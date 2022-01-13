@@ -35,7 +35,8 @@ def start_game():
     print("\U0001f4a9 " * 26)
 
     player_name = input("Please enter your name: ")
-    print(" \n")
+
+    clear()
 
     rules_response = input(f"Hi {player_name}. "
                            "Would you like to see the game rules & backstory? "
@@ -83,7 +84,8 @@ def game_rules():
           " \n"
           "Can you make it across the garden without stepping \n"
           "in that stinky dog poop? \n"
-          " \n")
+          " \n"
+        )
     print("\U0001f4a9 " * 22)
     print(" \n")
     input("Press enter to continue \n")
@@ -96,14 +98,18 @@ def game_rules():
     print(rules)
     print(" \n"
           "Make a horizontal path across the garden using\n"
-          "the numbers on your keypad to select the row\n"
-          "and column you would like to try first. \n"
+          "the numbers on your keypad to chose the row\n"
+          "and column. \n"
+          " \n"
           "If the tile you pick does not contain poo, the tile will be\n"
           "replaced with a shoe. \U0001f97e \n"
           " \n"
           "If you step in poo it will be replaced with.... well you know... \n"
           "and you will need to try and make a new path! \n"
-          " \n")
+          " \n"
+          "Step in 5 poos and it's game-over!"
+          " \n"
+        )
     print("\U0001f4a9 " * 22)
     print(" \n")
 
