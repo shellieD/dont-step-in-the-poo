@@ -21,6 +21,10 @@
             align-items: center;
         }
 
+        #background {
+            background-image: url(https://github.com/shellieD/dont-step-in-the-poop/blob/main/assets/images/poo-pattern.png) repeat center center;
+        }
+
         /**
         * Default styles for xterm.js
         */
@@ -174,7 +178,10 @@
         }
     </style>
 </head>
-<div id="container"></div>
-@{body}
+<div id="container">
+    @{body}
+</div>
+
+<div id="background"></div>
 
 </html>
