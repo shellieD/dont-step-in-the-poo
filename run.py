@@ -213,7 +213,8 @@ def you_lose():
     print("\n")
     result = pyfiglet.figlet_format("* OH POOP * \n YOU LOOSE!")
     print(result)
-
+    print("\U0001f4a9 " * 22)
+    
     sleep(2)
     clear()
 
