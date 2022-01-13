@@ -11,9 +11,8 @@ import gameboard
 
 
 def clear():
-    """
-    Function to clear terminal when required to present
-    a clean screen to the user.
+    """ Clears terminal
+
     """
     # for windows
     if name == 'nt':
@@ -27,7 +26,9 @@ def clear():
 def start_game():
     """
     Displays title screen and asks for users name.
-    Gives player option to view rules and story
+    Gives player option to view rules and story.
+    Asks if player is ready to play.
+    Calls relevant function once input is validated.
     """
     print("\U0001f4a9 " * 26)
     title = pyfiglet.figlet_format("DONT STEP\nIN THE\nPOOP")
@@ -35,8 +36,6 @@ def start_game():
     print("\U0001f4a9 " * 26)
 
     player_name = input("Please enter your name: ")
-
-    clear()
 
     rules_response = input(f"Hi {player_name}. "
                            "Would you like to see the game rules & backstory? "
@@ -144,16 +143,22 @@ def validate_choice(user_choice):
 
 
 def set_up_game():
-    """
-    Selects a random row as a clear path through the board.
-    Distributes a poo randomly to each other row.
+    """ Instantiates the Board class
+
+    * Accepts user input for row and column - must be number.
+    * Validates input
+    * Converts input into a tuple of 2 ints.
+    * Appends tuple to player_guess in all events
+    * Increments flat_poos if poo discovered
+    * Appends tuple to correct_guess (if on clear path)
+    * Calls end game functions if game won or lost.
     """
     clear()
     new_board = gameboard.Board()
 
-    flat_poos = 0  # Stores coordinates of all identified poos
-    player_guess = []  # Stores all player guesses
-    correct_guess = []  # Stores all correct guesses on clear path
+    flat_poos = 0  # Stores amount of poos identified as int
+    player_guess = []  # all player guesses (tuples of 2 ints)
+    correct_guess = []  # correct guesses on clear path (tuples of 2 ints)
 
     while flat_poos < 5:
 
@@ -293,10 +298,13 @@ def goodbye():
 
 
 def validate_input(value):
-    """
-    Within the try statement, converts the row/column value entered
-    into an integer.  Returns an error if value entered is not a number
-    returns an error if the number is not within the range 0-8
+    """ Validates user input for row/column
+
+    Within the first try statement, converts the row/column value entered
+    into an integer.   Returns an error if value entered is not a number.
+
+    Within the second try statement, returns an error if the number
+    is not within the range 0-8
     """
     try:
         value = int(value)

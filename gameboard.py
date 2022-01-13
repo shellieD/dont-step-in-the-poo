@@ -28,7 +28,7 @@ class Board():
         """ Selects random int between 0 and 8
         (not including 8)
 
-        This randomn number will represent the 
+        This random number will represent the
         row where no poos are placed.
 
         ---
@@ -54,11 +54,11 @@ class Board():
     def _set_up_poos(self):
         """ Selects random coordinates for 13 poos.
 
-        Ensures there is at least one poo on each row 
+        Ensures there is at least one poo on each row
         except the row with a clear path
 
         ---
-        returns: List of 13 tuples with 2 ints 
+        returns: List of 13 tuples with 2 ints
         [(row, col), (row, col)...]
 
         """
