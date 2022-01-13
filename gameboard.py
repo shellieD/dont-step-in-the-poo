@@ -41,7 +41,7 @@ class Board():
         """
         self._open_game_board()
 
-        print("   0   1   2   3   4   5   6   7")
+        print("   0  1  2  3  4  5  6  7")
 
         for i, row in enumerate(self.board):
             print(i, " " + " ".join(row))
@@ -51,8 +51,7 @@ class Board():
         Opens game board ready to play or something like that
         """
         print("\U0001f4a9 " * 22)
-        print(" \n")
-        game_board = pyfiglet.figlet_format("          GAME-BOARD")
+        game_board = pyfiglet.figlet_format("          GAME-BOARD", font="bubble")
         print(game_board)
         print(
             " \n"
