@@ -213,6 +213,7 @@ def you_lose():
     print("\n")
     result = pyfiglet.figlet_format("* OH POOP * \n YOU LOOSE!")
     print(result)
+    sleep(2)
 
     print("                  #")
     print("                 {##} ")
@@ -249,10 +250,11 @@ def you_win():
     clear()
     print("\U0001f4a9 " * 22)
     print("\n")
-    result = pyfiglet.figlet_format("  * YAY * \n * YOU WIN! *")
+    result = pyfiglet.figlet_format("  * YAY * \n * YOU WIN!*")
     print(result)
     print("\U0001f4a9 " * 22)
     print(" \n")
+    sleep(2)
 
     print("             OOOOOOOOOOO")
     print("         OOOOOOOOOOOOOOOOOOO")
