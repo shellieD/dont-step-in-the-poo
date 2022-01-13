@@ -25,7 +25,7 @@ def clear():
 
 def start_game():
     """
-    * Opens the title screen
+    * Opens the title screen.
     * Requests players name
     * Asks if player would like to see view rules and story.
     """
@@ -72,7 +72,7 @@ def game_rules():
     clear()
     print("\U0001f4a9 " * 22)
     print(" \n")
-    story = pyfiglet.figlet_format("                STORY")
+    story = pyfiglet.figlet_format("                STORY", font="bubble")
     print(story)
     print(" \n"
           "Hello Postie!  I see you have some very important \n"
@@ -91,7 +91,7 @@ def game_rules():
     clear()
 
     print("\U0001f4a9 " * 22)
-    rules = pyfiglet.figlet_format("                RULES")
+    rules = pyfiglet.figlet_format("                RULES", font="bubble")
     print(" \n")
     print(rules)
     print(" \n"
@@ -148,7 +148,8 @@ def set_up_game():
     correct_guess = []  # Stores all correct guesses on clear path
 
     while flat_poos < 5:
-
+        
+        clear()
         new_board.draw_board()
 
         print(f"You have guessed: {player_guess}")
@@ -232,7 +233,7 @@ def you_lose():
 def you_win():
     """
     Prints win message to screen with ASCII art.
-    Asks if player would like to play again
+    Asks if player would like to play again.
     """
     clear()
     print("\U0001f4a9 " * 22)
@@ -276,10 +277,10 @@ def goodbye():
     Prints goodbye message and exits game.
     """
     clear()
-    print("\U0001f4a9" * 22)
+    print("\U0001f4a9 " * 22)
     good_bye = pyfiglet.figlet_format("GOODBYE")
     print(good_bye)
-    print("\U0001f4a9" * 22)
+    print("\U0001f4a9 " * 22)
     exit()
 
 
