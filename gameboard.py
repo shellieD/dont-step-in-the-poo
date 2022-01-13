@@ -52,17 +52,17 @@ class Board():
         Opens game board ready to play or something like that
         """
         print("\U0001f4a9 " * 22)
-        # game_board = pyfiglet.figlet_format("          GAME-BOARD", font="bubble")
-        print(" " * 10 + "G A M E  B O A R D")
-        print(
-            " \n"
-            "Top left corner is row 0, col 0.\n"
-            "Bottom right corner is row 7, col 7.\n"
-            "Make a clear path from left to right "
-            "across the garden without stepping in dog poop! \U0001f4a9\n"
-            "Step in 5 poos and it's game-over \n"
-            "Good luck!"
-        )
+        game_board = pyfiglet.figlet_format("          GAME-BOARD", font="bubble")
+        print(game_board)
+        # print(
+        #     " \n"
+        #     "Top left corner is row 0, col 0. "
+        #     "Bottom right corner is row 7, col 7.\n"
+        #     "Make a clear path across the garden "
+        #     "horizontally without stepping in dog poop! \U0001f4a9\n"
+        #     "Step in 5 poos and it's game-over! \n"
+        #     "GOOD LUCK!"
+        # )
         print("\U0001f4a9 " * 22 + " \n")
 
 # coord_tuple is a tuple of a couple of integers
