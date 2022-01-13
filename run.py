@@ -12,7 +12,8 @@ import gameboard
 
 def clear():
     """
-    Function to clear terminal when required.
+    Function to clear terminal when required to present
+    a clean screen to the user.
     """
     # for windows
     if name == 'nt':
@@ -25,9 +26,8 @@ def clear():
 
 def start_game():
     """
-    * Opens the title screen.
-    * Requests players name
-    * Asks if player would like to see view rules and story.
+    Displays title screen and asks for users name.
+    Gives player option to view rules and story
     """
     print("\U0001f4a9 " * 26)
     title = pyfiglet.figlet_format("DONT STEP\nIN THE\nPOOP")
@@ -75,16 +75,17 @@ def game_rules():
     print(" \n")
     story = pyfiglet.figlet_format("                STORY", font="bubble")
     print(story)
-    print(" \n"
-          "Hello Postie!  I see you have some very important \n"
-          "letters to deliver! \U0001f4ec \n"
-          " \n"
-          "Unfortunately, some very naughty pooches \U0001f415  have also \n"
-          "made a few deliveries at this house. \U0001f4a9 \n"
-          " \n"
-          "Can you make it across the garden without stepping \n"
-          "in that stinky dog poop? \n"
-          " \n"
+    print(
+        " \n"
+        "Hello Postie!  I see you have some very important \n"
+        "letters to deliver! \U0001f4ec \n"
+        " \n"
+        "Unfortunately, some very naughty pooches \U0001f415  have also \n"
+        "made a few deliveries at this house. \U0001f4a9 \n"
+        " \n"
+        "Can you make it across the garden without stepping \n"
+        "in that stinky dog poop? \n"
+        " \n"
         )
     print("\U0001f4a9 " * 22)
     print(" \n")
@@ -96,20 +97,21 @@ def game_rules():
     rules = pyfiglet.figlet_format("                RULES", font="bubble")
     print(" \n")
     print(rules)
-    print(" \n"
-          "Make a horizontal path across the garden using\n"
-          "the numbers on your keypad to chose the row\n"
-          "and column. \n"
-          " \n"
-          "If the tile you pick does not contain poo, the tile will be\n"
-          "replaced with a shoe. \U0001f97e \n"
-          " \n"
-          "If you step in poo it will be replaced with.... well you know... \n"
-          "and you will need to try and make a new path! \n"
-          " \n"
-          "Step in 5 poos and it's game-over!"
-          " \n"
-        )
+    print(
+        " \n"
+        "Make a horizontal path across the garden using\n"
+        "the numbers on your keypad to chose the row\n"
+        "and column. \n"
+        " \n"
+        "If the tile you pick does not contain poo, the tile will be\n"
+        "replaced with a shoe. \U0001f97e \n"
+        " \n"
+        "If you step in poo it will be replaced with.... well you know... \n"
+        "and you will need to try and make a new path! \n"
+        " \n"
+        "Step in 5 poos and it's game-over!"
+        " \n"
+         )
     print("\U0001f4a9 " * 22)
     print(" \n")
 
@@ -154,7 +156,7 @@ def set_up_game():
     correct_guess = []  # Stores all correct guesses on clear path
 
     while flat_poos < 5:
-        
+
         clear()
         new_board.draw_board()
 
