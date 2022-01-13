@@ -31,9 +31,9 @@ class Board():
     def _set_up_poos(self):
         poos = []
         while len(poos) < 13:
-        for i in range(8):
-            if i != self.clear_path:
-                poos.append((i, randrange(0, 8)))
+            for i in range(8):
+                if i != self.clear_path:
+                    poos.append((i, randrange(0, 8)))
         return poos
 
     def draw_board(self):
