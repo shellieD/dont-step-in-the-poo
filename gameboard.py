@@ -92,10 +92,7 @@ class Board():
 
         """
         print("\U0001f4a9 " * 22)
-        game_board = pyfiglet.figlet_format(
-                                            " " * 10 +
-                                            "GAME-BOARD", font="bubble"
-                                            )
+        game_board = pyfiglet.figlet_format("GAME-BOARD", font="bubble")
         print(game_board)
         print("\U0001f4a9 " * 22 + " \n")
 
