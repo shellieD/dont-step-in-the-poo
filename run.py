@@ -165,7 +165,6 @@ def set_up_game():
         clear()
         new_board.draw_board()
 
-        print(f"You have guessed: {player_guess}")
         # print(f"For testing purposes the clear path is row: {new_board.clear_path}")
         # print(f"For testing purposes poos are placed here {new_board.poos}")
 
@@ -194,8 +193,7 @@ def set_up_game():
             print("Phew, no poo there!!")
             print(f"Clear path at coordinate: {coord_tuple}")
 
-        print(f"Correct Guesses: {correct_guess}")
-        print(f"You stepped in {flat_poos} poos.")
+        print(f"You have stepped in {flat_poos} poos.")
 
         new_board.update_board(coord_tuple)
 
@@ -289,6 +287,12 @@ def goodbye():
     """
     Prints goodbye message and exits game.
     """
+    clear()
+    print("\U0001f4a9 " * 22)
+    thanks = pyfiglet.figlet_format("THANKS FOR \n PLAYING")
+    print(thanks)
+    print("\U0001f4a9 " * 22)
+    sleep(2)
     clear()
     print("\U0001f4a9 " * 22)
     good_bye = pyfiglet.figlet_format("GOODBYE")
