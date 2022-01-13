@@ -6,6 +6,10 @@ This project has been developed as part of the [Code Institute's](https://codein
 
 This command line app is a fun little game of chance.  The aim of the game is not disimiliar to Battleships - where you guess co-ordinates in a grid to sink your opponents ships - however, in this game you need to guess co-ordinates to make a clear path across the 'garden' without stepping in a dog poo. 
 
+[Link to deployed site here](https://dont-step-in-the-poop.herokuapp.com/)
+
+![Opening Screen](docs/screenshots/opening-screen.png)
+
 ## UX 
 
 ### Strategy Plane
