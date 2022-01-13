@@ -72,7 +72,7 @@ def game_rules():
     clear()
     print("\U0001f4a9 " * 22)
     print(" \n")
-    story = pyfiglet.figlet_format("                STORY", font="bubble")
+    story = pyfiglet.figlet_format("STORY", font="bubble")
     print(story)
     print(
         " \n"
@@ -93,7 +93,7 @@ def game_rules():
     clear()
 
     print("\U0001f4a9 " * 22)
-    rules = pyfiglet.figlet_format("                RULES", font="bubble")
+    rules = pyfiglet.figlet_format("RULES", font="bubble")
     print(" \n")
     print(rules)
     print(
