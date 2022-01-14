@@ -95,6 +95,13 @@ class Board():
         game_board = pyfiglet.figlet_format("GAME-BOARD", font="bubble")
         print(game_board)
         print("\U0001f4a9 " * 22 + " \n")
+        print(
+            "Make a clear path from left to right "
+            "across the garden without stepping in dog poop! \U0001f4a9\n"
+            "Step in 5 poos and it's game-over"
+            "Good luck!"
+        )
+        print("\U0001f4a9 " * 22 + " \n")
 
     def update_board(self, coord_tuple):
         """ Updates board after each player guess.
