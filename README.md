@@ -58,6 +58,28 @@ Smiley face ASCII are from ![loveascii.com](http://loveascii.com/smilies.html)
 ### Future Development
 
 ### Testing
+<br>
+
+#### PEP8 Online Validation
+
+<details>
+<summary>PEP8 Online Results for run.py file </summary>
+<br>
+
+![PEP8 Results - run.py](assets/docs/testing/pep8-1.png)
+</details>
+
+<br>
+
+<details>
+<summary>PEP8 Online Results for gameboard.py file</summary>
+<br>
+
+![PEP8 Results - gamboard.py](assets/docs/testing/pep8-2.png)
+
+</details>
+
+<br>
 
 ### Libraries Used
 
