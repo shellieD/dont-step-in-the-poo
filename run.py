@@ -241,7 +241,6 @@ def you_lose():
         play_again = input("Would you like to play again? y/n \n").lower()
 
     if play_again == 'y':
-        thanks()
         set_up_game()
     elif play_again == 'n':
         thanks()
@@ -290,7 +289,6 @@ def you_win():
         play_again = input("Would you like to play again? y/n \n").lower()
 
     if play_again == 'y':
-        thanks()
         set_up_game()
     elif play_again == 'n':
         thanks()
