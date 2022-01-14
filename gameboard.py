@@ -97,10 +97,10 @@ class Board():
         print("\U0001f4a9 " * 22 + " \n")
         print(
             "Make a clear path from left to right across \n"
-            "one row of the garden without stepping in"
+            "ONE ROW of the garden without stepping in"
             "dog poop! \U0001f4a9\n"
-            "NOTE: THere is only one winning row! \n"
-            "Step in 5 poos and it's game-over"
+            "NOTE: There is only one winning row! \n"
+            "Step in 5 poos and it's game-over \n"
             "Good luck!"
         )
         print("\U0001f4a9 " * 22 + " \n")
