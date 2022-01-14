@@ -77,7 +77,7 @@ All input is validated to check that the answer is either 'y' or 'n' and if not 
 
 It was important to include data validation for all inputs as it is incredibly frustrating and does not provide a good user experience if the game ends because of incorrect data entry.  This would result in the user having to restart the program from the beginning, potentially discouraging the user from playing. 
 
-If the user selects that they are ready to play, they will be taken to the game-board
+If the user selects that they are ready to play, they will be taken to the game-board, where the game will begin.
 
 
 
