@@ -165,9 +165,6 @@ def set_up_game():
         clear()
         new_board.draw_board()
 
-        # print(f"For testing purposes the clear path is row: {new_board.clear_path}")
-        # print(f"For testing purposes poos are placed here {new_board.poos}")
-
         coord = (validate_choice("row \n"), validate_choice("column \n"))
         coord_tuple = tuple(int(el) for el in coord)
 
@@ -214,7 +211,7 @@ def you_lose():
     result = pyfiglet.figlet_format("* OH POOP * \n YOU LOOSE!")
     print(result)
     print("\U0001f4a9 " * 22)
-    
+
     sleep(2)
     clear()
 
@@ -242,8 +239,10 @@ def you_lose():
         play_again = input("Would you like to play again? y/n \n").lower()
 
     if play_again == 'y':
+        thanks()
         set_up_game()
     elif play_again == 'n':
+        thanks()
         goodbye()
 
 
@@ -289,21 +288,30 @@ def you_win():
         play_again = input("Would you like to play again? y/n \n").lower()
 
     if play_again == 'y':
+        thanks()
         set_up_game()
     elif play_again == 'n':
+        thanks()
         goodbye()
 
-
-def goodbye():
-    """
-    Prints goodbye message and exits game.
-    """
+def thanks():
     clear()
     print("\U0001f4a9 " * 22)
     thanks = pyfiglet.figlet_format("THANKS FOR \n PLAYING")
     print(thanks)
     print("\U0001f4a9 " * 22)
     sleep(2)
+
+def goodbye():
+    """
+    Prints goodbye message and exits game.
+    """
+    # clear()
+    # print("\U0001f4a9 " * 22)
+    # thanks = pyfiglet.figlet_format("THANKS FOR \n PLAYING")
+    # print(thanks)
+    # print("\U0001f4a9 " * 22)
+    # sleep(2)
     clear()
     print("\U0001f4a9 " * 22)
     good_bye = pyfiglet.figlet_format("GOODBYE")
