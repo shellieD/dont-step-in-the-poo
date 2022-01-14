@@ -96,7 +96,7 @@ class Board():
         print(game_board)
         print("\U0001f4a9 " * 22 + " \n")
         print(
-            "Make a clear path from left to right "
+            "Make a clear path from left to right \n "
             "across the garden without stepping in dog poop! \U0001f4a9\n"
             "Step in 5 poos and it's game-over"
             "Good luck!"
