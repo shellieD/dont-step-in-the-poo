@@ -306,12 +306,6 @@ def goodbye():
     """
     Prints goodbye message and exits game.
     """
-    # clear()
-    # print("\U0001f4a9 " * 22)
-    # thanks = pyfiglet.figlet_format("THANKS FOR \n PLAYING")
-    # print(thanks)
-    # print("\U0001f4a9 " * 22)
-    # sleep(2)
     clear()
     print("\U0001f4a9 " * 22)
     good_bye = pyfiglet.figlet_format("GOODBYE")
