@@ -20,11 +20,10 @@ Select a row, and then a column to start guessing.   If you discover a poo, the 
 
 Can you find the clear path through the garden by stepping on 5 poos or less?  Step on 5 poos and I'm afraid it's game over, and you need to go home and clean those boots... or just play again!
 
-<br>
 
 ## UX 
 
-#### Site Goals
+### Site Goals
 
 The site's aims are to:
 * Provide the user with a fun and simple game of chance. 
@@ -32,7 +31,6 @@ The site's aims are to:
 * Provide an appropriate response to all user inputs and handle invalid data accordingly.
 * Provide an enjoyable experience to the user.
 
-<br>
 
 ### User Stories
 
@@ -41,19 +39,18 @@ As a user I want:
 * The purpose and the rules of the game to be apparent.
 * To know that my input is valid.
 
-<br>
 
-#### Features 
+### Features 
 
-* Main Page and Welcome Screen
+#### Main Page and Welcome Screen
 
-In order to give the user insight into the nature of the game, I designed the welcome page to show the name of the game (which in itself is self-explanatory) and styled the background of the browser with an image created using [flaticon](https://www.flaticon.com/), to fit with the theme.  On the main screen the user is asked to enter their name so a personalised greeting can be created.
+In order to give the user insight into the nature of the game, I designed the welcome page to show the name of the game (which in itself is self-explanatory) styled using [FIGlet fonts](http://www.figlet.org/examples.html)  and set the background of the browser to an image created using [flaticon](https://www.flaticon.com/), to fit with the theme - lots of poos on a green background.  On the main screen the user is asked to enter their name so a personalised greeting can be created.
 
 ![Opening Screen](assets/docs/screenshots/opening-screen.png)
 
 <br>
 
-* Story and Rules
+#### Story and Rules
 
 ![View Story and Rules?](assets/docs/screenshots/seerules.png)
 
@@ -65,7 +62,7 @@ By answering 'y' at this point, the player will be taken to the Story screen.  T
 
 ![Story](assets/docs/screenshots/story.png)
 
-When the player presses 'Enter' the terminal is cleared and the rules are displayed. 
+When the player presses 'Enter' the terminal is cleared and the rules are displayed in a consistent styling to the story screen to avoid too much screen movement.
 
 ![Rules](assets/docs/screenshots/rules.png)
 
@@ -79,12 +76,9 @@ It was important to include data validation for all inputs as it is incredibly f
 
 If the user selects that they are ready to play, they will be taken to the game-board, where the game will begin.
 
+#### Game board 
 
 
-* Game board - Use of emojis
-* Personalise with player name
-* Option to Play
-* Data Validation
 * Ascii art for user experience
 * 
 
