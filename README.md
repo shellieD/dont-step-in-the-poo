@@ -73,8 +73,14 @@ Features that would be nice to have for this project, but are out of scope given
 
 To aid my understanding of how the logic of the game will work, and to prevent 'scope-creep' I created the below flow chart using [Lucid Charts](https://lucid.co/)
 
-![Game Flow Chart](assets/docs/flowcharts/game-flowchart.png)
+<details>
+<summary>Game Flow Chart</summary>
+<br>
 
+![Game Flow Chart](assets/docs/flowcharts/game-flowchart.png)
+</details>
+
+<br>
 
 ### Features 
 
@@ -126,11 +132,13 @@ A message is displayed to the player after each guess, letting them know if they
 
 ### Design 
 
-I decided to use emojis for the game board to provide a bit of shape and color to the game and provide a more pleasing user experience. 
+As there are some limitations as to how you can style a command-line based app, I opted to use FIGlet fonts to create the Welcome Screen, Rules/Story/Game-Board heading and the goodbye screen.  I used the standard FIGlet font for the welcome screen and goodbye screen and 'bubble' for the rules, story and game-board headings.  
 
-Poop ASCII Art from user [pr0p3rno0b10](https://replit.com/@pr0p3rno0b10/poop-emoji-ascii-art) on Replit.
+I also decided to use poo emojis as a design feature around each heading and for the game board I used a green tile emoji to represent the grass on the garden and a poo or shoe emoji to denote whether a poo or a a clear space had been discovered.  
 
-Smiley face ASCII are from [loveascii.com](http://loveascii.com/smilies.html)
+I incorporated ASCII art for the win or lose screens and the source of the art is listed in the content section of this README documentation. 
+
+I think these design features help to provide a bit of shape,color and fun to the game and provide a more pleasing user experience. 
 
 #### Features 
 
@@ -163,7 +171,7 @@ All inputs have been tested for the following to ensure data validation is worki
 
 * Where a 'y' or 'n' is accepted as input I have tested with other string combinations, such as other letters or numbers, symbols and no input.  No issues were uncovered here and the input validation was working as expected. 
 
-* Where an integer between 0 and 8 (not including 8) is expected, I have tested using a strings, numbers greater than 7, letters, symbols and no input.  An issue was identified and fixed here and this is discussed in further details in the 'Issues' section. 
+* Where an integer between 0 and 8 (not including 8) is expected, I have tested using a strings, numbers greater than 7, letters, symbols and no input.  No issues were uncovered here and the input validaiton was working as expected. 
 
 The app was deployed early on Heroku so I could see the final output as this differs from what is seen when running the program in the IDE.  This meant I was able to make changes to the styling as I went along to ensure the best possible user experience was achieved.  
 
@@ -171,6 +179,7 @@ Once the game was 'finished' I submitted it for peer code review in the Code Ins
 
 #### Issues
 
+Comparing Coord with poos/clear_path - input as str not integer so couldn't be compared.
 
 #### PEP8 Online Validation
 
@@ -193,11 +202,30 @@ Once the game was 'finished' I submitted it for peer code review in the Code Ins
 
 <br>
 
+## Technologies
+
+### Development
+
+
+
 ### Libraries Used
+
+* Pyfiglet
+    - This was used to create the ASCII style text for the welcome page, headings and win/lose screens.
+
+* Random:
+    - randint was used to generate a random number between 0 and 8 to choose a random row that would be the winning path for that game.  It was also used to create random coordinates where the poos would be placed. 
+
+* OS:
+    - system used together with the clear/cls command to clear the terminal window and keep it clear from previous data.  This helps to provide a smooth transition when the board updates and gives the effect that only one tile is changing rather than the whole board being generated again. 
+
+* Time:
+    - sleep was used to create a pause between the user being informed if their choice revealed a poo or a clear path and the game-board being updated. 
 
 ### Deployment
 
-This app has been deployed via [Heroku](https://www.heroku.com/) and the live link can be found here: PUT LINK HERE!!! 
+This app has been deployed via [Heroku](https://www.heroku.com/) and the live link can be found here: [DON'T STEP IN THE POOP](https://dont-step-in-the-poop.herokuapp.com/)
+
 
 The following steps were followed to deploy to Heroku:
 
@@ -216,3 +244,23 @@ The following steps were followed to deploy to Heroku:
 13. Once your repsitory is connected to Heroku, you can enable automatic deploys using the 'Enable Automatic Deploys' button or manually deploy  by selecting the branch to deploy following by the 'Deploy Branch' button. 
 14.  If you choose to automatic deploys, Heroku will build a new version of the app whenever a change is pushed to Github.  Manually deploys allows you to update the app whenever you click the 'Deploy Branch'.   For this project I enabled automatic deploys to ensure the app was updated each time changes were pushed to Github.
 15. When the build process is complete you will be able to view the live app by clicking the link 'Your app was successfullly deployed".
+
+## Credits & References
+
+#### Code
+
+Other than the below exceptions, all of the code has been custom written by myself for the application: -
+
+When researching how to clear the screen when running a python program, I came across the following code from the [Geeks for Geeks](https://www.geeksforgeeks.org/clear-screen-python/) website.  
+
+
+#### ASCII Art
+
+Poop ASCII Art from user [pr0p3rno0b10](https://replit.com/@pr0p3rno0b10/poop-emoji-ascii-art) on Replit.
+
+Smiley face ASCII are from [loveascii.com](http://loveascii.com/smilies.html)
+
+
+## Acknowledments
+
+
