@@ -40,11 +40,28 @@ As a user I want:
 * To know that my input is valid.
 
 
-### Scope
+### Scope
 
-features planned
+To satisfy all of the site goals and user stories, the below features are planned taking into consideration the time-scale:
 
-out of scope
+* Use ASCII art and Emojis on the welcome screen to provide a positive user experience.
+* Provide a fun backstory and clear instructions on how to play the game.
+    - The option to view the rules and story for new users.
+    - The option to bypass viewing the rules and story for returning users.
+* Appropriate use of data validation to handle invalid input gracefully and prevent the program from terminating.
+    - Provide the user with an error message if their entry is invalid and guidance on what input is accepted.
+* Use ASCII art for win/lose screens.
+* Provide goodbye message if player chooses not to continue playing. 
+
+Features that would be nice to have for this project, but are out of scope given the small time-scale are:
+
+* Enabling different levels of difficulty:
+    - Larger/smaller game-board
+    - More or less poos to dodge
+    - More or less lives
+* Leader Board:
+    - Keeps a track of the users who used the fewest guesses to win the game.
+* Allow a winning path to be either horizontal, vertical or diagonally (in this first stage of development only a horizontal clear path will win the game).
 
 
 ### Game Flow
@@ -74,10 +91,9 @@ For returning users who may not wish to view the rules, they can simple answer '
 
 By answering 'y' at this point, the player will be taken to the Story screen.  There is then an option to press enter to continue, which gives the player as much time as they need to read the story.
 
-![Story](assets/docs/screenshots/story.png)
-
 When the player presses 'Enter' the terminal is cleared and the rules are displayed in a consistent styling to the story screen to avoid too much screen movement.
 
+![Story](assets/docs/screenshots/story.png)
 ![Rules](assets/docs/screenshots/rules.png)
 
 Once the rules are displayed or the user selects that they do not wish to view the rules, they will be asked if they are ready to play. 
@@ -93,10 +109,9 @@ If the user selects that they are ready to play, they will be taken to the game-
 #### Game-board 
  The game-board screen displays a heading 'Game-board' using figlet font 'bubble' which has a top and bottom border of emoji poos to give it shape and color.  There is a brief overview of the rules and then the game-board.  The game-board consists of 8 rows and 8 colums, with each space represented as a green tile.  This is to create the effect of a garden to fit with the story of the game.  The user is then tasked to guess a row, followed by a column to make their first guess or step across the garden.  
 
-![Game-board Screen](assets/docs/screenshots/game-board.png)
-
 As the user progresses through the game and continues to make guesses, the green tiles update to show either a poo emoji if a poo is found or a shoe emoji if there is no poo on the path.   It also shows the amount of poos already stepped in to let the user know how many more incorrect guesses they can make.  The game is over when 5 poos are stepped in. 
 
+![Game-board Screen](assets/docs/screenshots/game-board.png)
 ![Updated Board](assets/docs/screenshots/updated-board.png)
 
 A message is displayed to the player after each guess, letting them know if they have stepped in a poo or a clear path.   
@@ -105,10 +120,6 @@ A message is displayed to the player after each guess, letting them know if they
 ![Message to player - poo](assets/docs/screenshots/mess.png)
 
 I decided to use emojis for the game board to provide a bit of shape and color to the game and provide a more pleasing user experience. 
-
-#### Logic Flow
-
-### Surface Plane
 
 #### Design
 
