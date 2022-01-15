@@ -40,6 +40,20 @@ As a user I want:
 * To know that my input is valid.
 
 
+### Scope
+
+features planned
+
+out of scope
+
+
+### Game Flow
+
+To aid my understanding of how the logic of the game will work, and to prevent 'scope-creep' I created the below flow chart using [Lucid Charts](https://lucid.co/)
+
+![Game Flow Chart](assets/docs/flowcharts/game-flowchart.png)
+
+
 ### Features 
 
 #### Main Page and Welcome Screen
@@ -91,12 +105,6 @@ A message is displayed to the player after each guess, letting them know if they
 ![Message to player - poo](assets/docs/screenshots/mess.png)
 
 I decided to use emojis for the game board to provide a bit of shape and color to the game and provide a more pleasing user experience. 
-
-### Structure Plane
-
-* User Story: / Acceptance Criteria:
-
-### Skeleton Plane
 
 #### Logic Flow
 
