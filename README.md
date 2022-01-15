@@ -38,6 +38,7 @@ As a user I want:
 * To play a fun and simple game of chance. 
 * The purpose and the rules of the game to be apparent.
 * To know that my input is valid.
+* To know how many 'lives' I have left.
 
 
 ### Scope
@@ -50,8 +51,12 @@ To satisfy all of the site goals and user stories, the below features are planne
     - The option to bypass viewing the rules and story for returning users.
 * Appropriate use of data validation to handle invalid input gracefully and prevent the program from terminating.
     - Provide the user with an error message if their entry is invalid and guidance on what input is accepted.
+* Display a count of how many poos have been discovered - once this reaches 5, the game is over.
+* Create a grid style game-board and switch out the tiles depending on if a poo or a clear space has been guessed.  This will allow the user to know which coordinates they have already guessed.
+    - Validate user guesses and alert the user if they choosen a tile they have already tried or if their input is not valid.
 * Use ASCII art for win/lose screens.
-* Provide goodbye message if player chooses not to continue playing. 
+    - Return to a new game-board if the user chooses to continue to play.
+    - Provide goodbye message if player chooses not to continue playing. 
 
 Features that would be nice to have for this project, but are out of scope given the small time-scale are:
 
@@ -107,23 +112,23 @@ It was important to include data validation for all inputs as it is incredibly f
 If the user selects that they are ready to play, they will be taken to the game-board, where the game will begin.
 
 #### Game-board 
- The game-board screen displays a heading 'Game-board' using figlet font 'bubble' which has a top and bottom border of emoji poos to give it shape and color.  There is a brief overview of the rules and then the game-board.  The game-board consists of 8 rows and 8 colums, with each space represented as a green tile.  This is to create the effect of a garden to fit with the story of the game.  The user is then tasked to guess a row, followed by a column to make their first guess or step across the garden.  
+ The game-board screen displays a heading 'Game-board' using figlet font 'bubble' which has a top and bottom border of emoji poos to give it shape and colour.  There is a brief overview of the rules and then the game-board.  The game-board consists of 8 rows and 8 colums, with each space represented as a green tile.  This is to create the effect of a garden to fit with the story of the game and to provide colour to an otherwise bland terminal.  The user is then tasked to guess a row, followed by a column to make their first guess or 'step' across the garden.  
+
+![Game-board Screen](assets/docs/screenshots/game-board.png)
 
 As the user progresses through the game and continues to make guesses, the green tiles update to show either a poo emoji if a poo is found or a shoe emoji if there is no poo on the path.   It also shows the amount of poos already stepped in to let the user know how many more incorrect guesses they can make.  The game is over when 5 poos are stepped in. 
 
-![Game-board Screen](assets/docs/screenshots/game-board.png)
-![Updated Board](assets/docs/screenshots/updated-board.png)
+![Blank Board](assets/docs/screenshots/blank-board.png) ![Updated Board](assets/docs/screenshots/updated-board.png)
 
 A message is displayed to the player after each guess, letting them know if they have stepped in a poo or a clear path.   
 
-![Message to player - no poo](assets/docs/screenshots/no-poo.png)
-![Message to player - poo](assets/docs/screenshots/mess.png)
+![Message to player - no poo](assets/docs/screenshots/no-poo.png) ![Message to player - poo](assets/docs/screenshots/mess.png)
+
+### Design 
 
 I decided to use emojis for the game board to provide a bit of shape and color to the game and provide a more pleasing user experience. 
 
-#### Design
-
-Poop Ascii Art from user [pr0p3rno0b10](https://replit.com/@pr0p3rno0b10/poop-emoji-ascii-art) on Replit.
+Poop ASCII Art from user [pr0p3rno0b10](https://replit.com/@pr0p3rno0b10/poop-emoji-ascii-art) on Replit.
 
 Smiley face ASCII are from [loveascii.com](http://loveascii.com/smilies.html)
 
@@ -160,9 +165,9 @@ All inputs have been tested for the following to ensure data validation is worki
 
 * Where an integer between 0 and 8 (not including 8) is expected, I have tested using a strings, numbers greater than 7, letters, symbols and no input.  An issue was identified and fixed here and this is discussed in further details in the 'Issues' section. 
 
-The app was deployed early on Heroku so I could see the final output as this differs from what is seen when running the program in the IDE.  This meant I was able to make changes to the styling as I went along to ensure the best user experience possible was achieved.  
+The app was deployed early on Heroku so I could see the final output as this differs from what is seen when running the program in the IDE.  This meant I was able to make changes to the styling as I went along to ensure the best possible user experience was achieved.  
 
-Once the game was 'finished' I submitted it for peer review in the Code Institue Slack Community.  A few small issues were brought to my attention, which were noted and tweaked and again, are discussed in further details in the 'Issues' section. 
+Once the game was 'finished' I submitted it for peer code review in the Code Institue Slack Community.  A few small issues were brought to my attention, which were noted and tweaked and again, are discussed in further details in the 'Issues' section. 
 
 #### Issues
 
