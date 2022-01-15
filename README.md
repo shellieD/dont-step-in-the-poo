@@ -82,9 +82,20 @@ To aid my understanding of how the logic of the game will work, and to prevent '
 
 <br>
 
-### Features 
+### Features & Design
 
-#### Main Page and Welcome Screen
+* Design 
+
+As there are some limitations as to how you can style a command-line based app, I opted to use FIGlet fonts to create the Welcome Screen, Rules/Story/Game-Board heading and the goodbye screen.  I used the standard FIGlet font for the welcome screen and goodbye screen and 'bubble' for the rules, story and game-board headings.  
+
+I also decided to use poo emojis as a design feature around each heading and for the game board I used a green tile emoji to represent the grass on the garden and a poo or shoe emoji to denote whether a poo or a a clear space had been discovered.  
+
+I incorporated ASCII art for the win or lose screens and the source of the art is listed in the content section of this README documentation. 
+
+I think these design features help to provide a bit of shape, color and fun to the game and provide a more pleasing user experience. 
+
+
+* Main Page and Welcome Screen
 
 In order to give the user insight into the nature of the game, I designed the welcome page to show the name of the game (which in itself is self-explanatory) styled using [FIGlet fonts](http://www.figlet.org/examples.html)  and set the background of the browser to an image created using [flaticon](https://www.flaticon.com/), to fit with the theme - lots of poos on a green background.  On the main screen the user is asked to enter their name so a personalised greeting can be created.
 
@@ -92,15 +103,15 @@ In order to give the user insight into the nature of the game, I designed the we
 
 <br>
 
-#### Story and Rules
+* Story and Rules
 
 ![View Story and Rules?](assets/docs/screenshots/seerules.png)
 
-For first-time users of the game, I thought it would be appropriate to have the option to view the rules and backstory of the game.  The backstory gives the game some context and adds an element 'fun'.
+For first-time users of the game, I thought it would be appropriate to have the option to view the rules and story of the game.  The story gives the game some context and adds an element 'fun'.
 
 For returning users who may not wish to view the rules, they can simple answer 'n' to this question.
 
-By answering 'y' at this point, the player will be taken to the Story screen.  There is then an option to press enter to continue, which gives the player as much time as they need to read the story.
+By answering 'y' at this point, the player will be taken to the Story screen.  There is then an option to press enter to continue, which gives the player as much time as they need to read the story before the rules are displayed.
 
 When the player presses 'Enter' the terminal is cleared and the rules are displayed in a consistent styling to the story screen to avoid too much screen movement.
 
@@ -117,7 +128,8 @@ It was important to include data validation for all inputs as it is incredibly f
 
 If the user selects that they are ready to play, they will be taken to the game-board, where the game will begin.
 
-#### Game-board 
+* Game-board 
+
  The game-board screen displays a heading 'Game-board' using figlet font 'bubble' which has a top and bottom border of emoji poos to give it shape and colour.  There is a brief overview of the rules and then the game-board.  The game-board consists of 8 rows and 8 colums, with each space represented as a green tile.  This is to create the effect of a garden to fit with the story of the game and to provide colour to an otherwise bland terminal.  The user is then tasked to guess a row, followed by a column to make their first guess or 'step' across the garden.  
 
 ![Game-board Screen](assets/docs/screenshots/game-board.png)
@@ -130,16 +142,6 @@ A message is displayed to the player after each guess, letting them know if they
 
 ![Message to player - no poo](assets/docs/screenshots/no-poo.png) ![Message to player - poo](assets/docs/screenshots/mess.png)
 
-
-### Design 
-
-As there are some limitations as to how you can style a command-line based app, I opted to use FIGlet fonts to create the Welcome Screen, Rules/Story/Game-Board heading and the goodbye screen.  I used the standard FIGlet font for the welcome screen and goodbye screen and 'bubble' for the rules, story and game-board headings.  
-
-I also decided to use poo emojis as a design feature around each heading and for the game board I used a green tile emoji to represent the grass on the garden and a poo or shoe emoji to denote whether a poo or a a clear space had been discovered.  
-
-I incorporated ASCII art for the win or lose screens and the source of the art is listed in the content section of this README documentation. 
-
-I think these design features help to provide a bit of shape,color and fun to the game and provide a more pleasing user experience. 
 
 ### Future Development
 
@@ -166,7 +168,7 @@ All inputs have been tested for the following to ensure data validation is worki
 
 * Where a 'y' or 'n' is accepted as input I have tested with other string combinations, such as other letters or numbers, symbols and no input.  No issues were uncovered here and the input validation was working as expected. 
 
-* Where an integer between 0 and 8 (not including 8) is expected, I have tested using a strings, numbers greater than 7, letters, symbols and no input.  No issues were uncovered here and the input validaiton was working as expected. 
+* Where an integer between 0 and 8 (not including 8) is expected, I have tested using a strings, numbers greater than 7, letters, symbols and no input.  No issues were uncovered here and the input validation was working as expected. 
 
 The app was deployed early on Heroku so I could see the final output as this differs from what is seen when running the program in the IDE.  This meant I was able to make changes to the styling as I went along to ensure the best possible user experience was achieved.  
 
@@ -346,11 +348,13 @@ def validate_input(value):
 
 ### ASCII Art
 
+Background image created using [flaticon](https://www.flaticon.com/).
+
 Poop ASCII Art from user [pr0p3rno0b10](https://replit.com/@pr0p3rno0b10/poop-emoji-ascii-art) on Replit.
 
 Smiley face ASCII are from [loveascii.com](http://loveascii.com/smilies.html)
 
 
-### Acknowledments
+### Acknowledgments
 
 
