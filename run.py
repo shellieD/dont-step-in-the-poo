@@ -10,6 +10,7 @@ import pyfiglet
 import gameboard
 
 
+# Below code for the clear() function taken from Geeks for Geeks website
 def clear():
     """ Clears terminal
 
@@ -294,16 +295,18 @@ def you_win():
         thanks()
         goodbye()
 
+
 def thanks():
     """
     Displays thank you message when user decides to stop playing
     """
     clear()
     print("\U0001f4a9 " * 22)
-    thanks = pyfiglet.figlet_format("THANKS FOR \n PLAYING")
-    print(thanks)
+    thankyou = pyfiglet.figlet_format("THANKS FOR \n PLAYING")
+    print(thankyou)
     print("\U0001f4a9 " * 22)
     sleep(2)
+
 
 def goodbye():
     """
