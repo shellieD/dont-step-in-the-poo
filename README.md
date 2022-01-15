@@ -76,11 +76,21 @@ It was important to include data validation for all inputs as it is incredibly f
 
 If the user selects that they are ready to play, they will be taken to the game-board, where the game will begin.
 
-#### Game board 
+#### Game-board 
+ The game-board screen displays a heading 'Game-board' using figlet font 'bubble' which has a top and bottom border of emoji poos to give it shape and color.  There is a brief overview of the rules and then the game-board.  The game-board consists of 8 rows and 8 colums, with each space represented as a green tile.  This is to create the effect of a garden to fit with the story of the game.  The user is then tasked to guess a row, followed by a column to make their first guess or step across the garden.  
 
+![Game-board Screen](assets/docs/screenshots/game-board.png)
 
-* Ascii art for user experience
-* 
+As the user progresses through the game and continues to make guesses, the green tiles update to show either a poo emoji if a poo is found or a shoe emoji if there is no poo on the path.   It also shows the amount of poos already stepped in to let the user know how many more incorrect guesses they can make.  The game is over when 5 poos are stepped in. 
+
+![Updated Board](assets/docs/screenshots/updated-board.png)
+
+A message is displayed to the player after each guess, letting them know if they have stepped in a poo or a clear path.   
+
+![Message to player - no poo](assets/docs/screenshots/no-poo.png)
+![Message to player - poo](assets/docs/screenshots/mess.png)
+
+I decided to use emojis for the game board to provide a bit of shape and color to the game and provide a more pleasing user experience. 
 
 ### Structure Plane
 
@@ -103,12 +113,6 @@ Smiley face ASCII are from [loveascii.com](http://loveascii.com/smilies.html)
 * Welcome Screen
 
 ![Opening Screen](assets/docs/screenshots/opening-screen.png)
-* Story and Rules
-* Game board - Use of emojis
-* Personalise with player name
-* Option to Play
-* Data Validation
-* Ascii art for user experience
 
 ### Future Development
 
@@ -122,23 +126,26 @@ I would like introduce varying levels of difficulty, which could be done in a nu
 
 As the board is created as a class, I think the above would be fairly simple options to add by creating a new user input to select the difficulty level - easy, medium or hard - and passing the appropriate arguments for the number of rows/columns, number of poos and number of lives.
 
-In it's current state, the user is only able to win the game by finding a clear path horizontally through the board.  I would also like to develop the game further so that the user can create a straight path either horizontally, vertically or diagonally through the board.  Unfortunately this was out of scope for this project due to the limited time-frame I was working within, but I think that adding that functionality would provide a better user experience.
+In it's current state, the user is only able to win the game by finding a clear path horizontally through the board.  I would also like to develop the game further so that the user can create a straight path either horizontally, vertically or diagonally through the board.  Unfortunately this was out of scope for this project due to the limited time-frame I was working within, but I think that adding this functionality would provide a better user experience.
 
 
 ### Testing
 <br>
 
 #### Manual Testing 
-Testing took place continuously throughout the development of the app.  Functions were tested using print statements as and when they were created and the functionality was tested regularly in the IDE to ensure the outcome of those functions was as expected.  I used linter recommended by CI (flake8) to identify any problems within the code and rectified these as soon as they were brought to my attention.  In the instance that functions did not work as expected, I use the integrated debugger tool within Gitpod to see step by step exactly what was happening and to enable me to make appropriate changes.
+Testing took place continuously throughout the development of the app.  Functions were tested using print statements as and when they were created and the functionality was tested regularly in the IDE to ensure the outcome of those functions was as expected.  I used the linter recommended by CI (flake8) to identify any problems within the code and rectified these as soon as they were brought to my attention.  In the instance that functions did not work as expected, I use the integrated debugger tool within Gitpod to see step by step exactly what was happening  to enable me to make appropriate changes.
 
 All inputs have been tested for the following to ensure data validation is working as expected:-
 
-* Where a 'y' or 'n' is accepted as input I have tested with other string combinations, such as other letters or numbers, symbols and no input.  No issues were ucovered here and the input validation was working as expected. 
+* Where a 'y' or 'n' is accepted as input I have tested with other string combinations, such as other letters or numbers, symbols and no input.  No issues were uncovered here and the input validation was working as expected. 
+
 * Where an integer between 0 and 8 (not including 8) is expected, I have tested using a strings, numbers greater than 7, letters, symbols and no input.  An issue was identified and fixed here and this is discussed in further details in the 'Issues' section. 
 
 The app was deployed early on Heroku so I could see the final output as this differs from what is seen when running the program in the IDE.  This meant I was able to make changes to the styling as I went along to ensure the best user experience possible was achieved.  
 
 Once the game was 'finished' I submitted it for peer review in the Code Institue Slack Community.  A few small issues were brought to my attention, which were noted and tweaked and again, are discussed in further details in the 'Issues' section. 
+
+#### Issues
 
 
 #### PEP8 Online Validation
