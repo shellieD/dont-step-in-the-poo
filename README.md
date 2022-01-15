@@ -130,6 +130,7 @@ A message is displayed to the player after each guess, letting them know if they
 
 ![Message to player - no poo](assets/docs/screenshots/no-poo.png) ![Message to player - poo](assets/docs/screenshots/mess.png)
 
+
 ### Design 
 
 As there are some limitations as to how you can style a command-line based app, I opted to use FIGlet fonts to create the Welcome Screen, Rules/Story/Game-Board heading and the goodbye screen.  I used the standard FIGlet font for the welcome screen and goodbye screen and 'bubble' for the rules, story and game-board headings.  
@@ -139,12 +140,6 @@ I also decided to use poo emojis as a design feature around each heading and for
 I incorporated ASCII art for the win or lose screens and the source of the art is listed in the content section of this README documentation. 
 
 I think these design features help to provide a bit of shape,color and fun to the game and provide a more pleasing user experience. 
-
-#### Features 
-
-* Welcome Screen
-
-![Opening Screen](assets/docs/screenshots/opening-screen.png)
 
 ### Future Development
 
@@ -161,10 +156,10 @@ As the board is created as a class, I think the above would be fairly simple opt
 In it's current state, the user is only able to win the game by finding a clear path horizontally through the board.  I would also like to develop the game further so that the user can create a straight path either horizontally, vertically or diagonally through the board.  Unfortunately this was out of scope for this project due to the limited time-frame I was working within, but I think that adding this functionality would provide a better user experience.
 
 
-### Testing
+## Testing
 <br>
 
-#### Manual Testing 
+### Manual Testing 
 Testing took place continuously throughout the development of the app.  Functions were tested using print statements as and when they were created and the functionality was tested regularly in the IDE to ensure the outcome of those functions was as expected.  I used the linter recommended by CI (flake8) to identify any problems within the code and rectified these as soon as they were brought to my attention.  In the instance that functions did not work as expected, I use the integrated debugger tool within Gitpod to see step by step exactly what was happening  to enable me to make appropriate changes.
 
 All inputs have been tested for the following to ensure data validation is working as expected:-
@@ -177,11 +172,11 @@ The app was deployed early on Heroku so I could see the final output as this dif
 
 Once the game was 'finished' I submitted it for peer code review in the Code Institue Slack Community.  A few small issues were brought to my attention, which were noted and tweaked and again, are discussed in further details in the 'Issues' section. 
 
-#### Issues
+### Issues
 
 Comparing Coord with poos/clear_path - input as str not integer so couldn't be compared.
 
-#### PEP8 Online Validation
+### PEP8 Online Validation
 
 <details>
 <summary>PEP8 Online Results for run.py file </summary>
@@ -202,11 +197,14 @@ Comparing Coord with poos/clear_path - input as str not integer so couldn't be c
 
 <br>
 
-## Technologies
 
-### Development
+### Languages
 
+Python
 
+### Version Control
+
+Git
 
 ### Libraries Used
 
@@ -247,20 +245,112 @@ The following steps were followed to deploy to Heroku:
 
 ## Credits & References
 
-#### Code
+### Code
 
-Other than the below exceptions, all of the code has been custom written by myself for the application: -
+Other than the below exceptions, all of the code has been custom written by myself for the application:-
 
-When researching how to clear the screen when running a python program, I came across the following code from the [Geeks for Geeks](https://www.geeksforgeeks.org/clear-screen-python/) website.  
+When researching how to clear the screen when running a python program, I came across the following code from the [Geeks for Geeks](https://www.geeksforgeeks.org/clear-screen-python/) website.  This code also included the sleep function from the time library which I have also used in this project.
+
+```
+# import only system from os
+from os import system, name
+
+# import sleep to show output for some time period
+from time import sleep
+
+# define our clear function
+def clear():
+
+	# for windows
+	if name == 'nt':
+		_ = system('cls')
+
+	# for mac and linux(here, os.name is 'posix')
+	else:
+		_ = system('clear')
+
+# print out some text
+print('hello geeks\n'*10)
+
+# sleep for 2 seconds after printing output
+sleep(2)
+
+# now call function we defined above
+clear()
+
+```
+
+From the same website I also found guidance on how to use the pyfighlet library to style text within the console:
 
 
-#### ASCII Art
+```
+# import pyfiglet module
+import pyfiglet
+
+result = pyfiglet.figlet_format("Geeks For Geeks")
+print(result)
+``` 
+
+My validate_input function was adapted from the code used in the [Code Institue's](https://codeinstitute.net/) Love Sandwiches code-along project.  I have detailed both functions below and you can see the similarities and differences betweeen the two. 
+
+Code Institutes Validation Function:
+```
+def validate_data(values):
+    """
+    Inside the try, converts all string values into integers.
+    Raises ValueError if strings cannot be converted into int,
+    or if there aren't exactly 6 values.
+    """
+    try:
+        [int(value) for value in values]
+        if len(values) != 6:
+            raise ValueError(
+                f"Exactly 6 values required, you provided {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
+
+```
+
+My Validation Function:
+
+``` 
+def validate_input(value):
+    """ Validates user input for row/column
+
+    Within the first try statement, converts the row/column value entered
+    into an integer.   Returns an error if value entered is not a number.
+
+    Within the second try statement, returns an error if the number
+    is not within the range 0-8
+    """
+    try:
+        value = int(value)
+    except ValueError:
+        print(f"Invalid data: {value} is not a number")
+        return False
+
+    try:
+        if value not in range(8):
+            raise ValueError(f"Please choose a number between 0 and 7."
+                             f"You entered: {value}")
+    except ValueError as error:
+        print(f"Invalid data: {error}, please try again.")
+        return False
+    return True
+```
+
+
+### ASCII Art
 
 Poop ASCII Art from user [pr0p3rno0b10](https://replit.com/@pr0p3rno0b10/poop-emoji-ascii-art) on Replit.
 
 Smiley face ASCII are from [loveascii.com](http://loveascii.com/smilies.html)
 
 
-## Acknowledments
+### Acknowledments
 
 
