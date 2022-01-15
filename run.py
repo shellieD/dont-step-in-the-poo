@@ -295,6 +295,9 @@ def you_win():
         goodbye()
 
 def thanks():
+    """
+    Displays thank you message when user decides to stop playing
+    """
     clear()
     print("\U0001f4a9 " * 22)
     thanks = pyfiglet.figlet_format("THANKS FOR \n PLAYING")
