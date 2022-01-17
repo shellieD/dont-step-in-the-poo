@@ -338,7 +338,7 @@ def validate_input(value):
     try:
         if value not in range(8):
             raise ValueError(f"Please choose a number between 0 and 7."
-                             f"You entered: {value}")
+                             f"\nYou entered: {value}")
     except ValueError as error:
         print(f"Invalid data: {error}, please try again.")
         return False
