@@ -325,9 +325,11 @@ I then used this variable in my if/elif/else statement which resulted in the fun
 
 ### Development
 
-The project was written and tested using [Gitpod](https://gitpod.io/)
-The project uses [Github](https://github.com/) for utilising git version control
-The project was deployed via [Heroku](https://id.heroku.com/)
+The project was written and tested using [Gitpod](https://gitpod.io/).
+
+The project uses [Github](https://github.com/) for utilising git version control.
+
+The project was deployed via [Heroku](https://id.heroku.com/).
 
 This project has been written using [Python3](https://www.python.org/downloads/)
 
@@ -473,7 +475,7 @@ def validate_input(value):
 ![List Comprehension for converting elements in a tuple from strings to integers](assets/docs/screenshots/stackoverflow.png)
 
 
-### ASCII Art
+### ASCII Art & Imagery 
 
 Background image created using [flaticon](https://www.flaticon.com/).
 
